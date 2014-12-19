@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f4ace027f674a4bb97a74f77dabf9d8" Name="Diagram1" ZoomLevel="112" >
+        <EntityTypeShape EntityType="SoulardDBModel.NurseryClients" Width="1.75" PointX="0.5" PointY="6" />
+        <EntityTypeShape EntityType="SoulardDBModel.Adults" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="SoulardDBModel.ContactInfo" Width="1.5" PointX="6" PointY="1.25" />
+        <EntityTypeShape EntityType="SoulardDBModel.ContactPreference" Width="2.375" PointX="2.875" PointY="0.5" />
+        <EntityTypeShape EntityType="SoulardDBModel.Children" Width="1.5" PointX="9" PointY="4" />
+        <AssociationConnector Association="SoulardDBModel.ChildrenContactInfo" />
+        <AssociationConnector Association="SoulardDBModel.AdultsContactInfo" />
+        <AssociationConnector Association="SoulardDBModel.AdultsContactPreference" />
+        <AssociationConnector Association="SoulardDBModel.ChildrenContactPreference" />
+        <AssociationConnector Association="SoulardDBModel.ChildrenNurseryClients" />
+        <AssociationConnector Association="SoulardDBModel.AdultsNurseryClients2" />
+        <AssociationConnector Association="SoulardDBModel.AdultsNurseryClients3" />
+        <AssociationConnector Association="SoulardDBModel.AdultsChildren" />
+        <AssociationConnector Association="SoulardDBModel.AdultsChildren1" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SoulardDBModel.Memberships" Width="1.5" PointX="8.875" PointY="0.5" />
+        <AssociationConnector Association="SoulardDBModel.AdultsMemberships" />
+        <AssociationConnector Association="SoulardDBModel.ChildrenMemberships" />
+        <EntityTypeShape EntityType="SoulardDBModel.SpiritualGifts" Width="2.25" PointX="11.375" PointY="0.5" />
+        <AssociationConnector Association="SoulardDBModel.AdultsSpiritualGifts" />
+        <AssociationConnector Association="SoulardDBModel.ChildrenSpiritualGifts" />
+        <EntityTypeShape EntityType="SoulardDBModel.Values" Width="1.5" PointX="14.875" PointY="0.5" />
+        <EntityTypeShape EntityType="SoulardDBModel.EmergencyContacts" Width="2.25" PointX="15.125" PointY="3.125" />
+        <AssociationConnector Association="SoulardDBModel.AdultsEmergencyContacts" />
+        <AssociationConnector Association="SoulardDBModel.ChildrenEmergencyContacts" />
+        <EntityTypeShape EntityType="SoulardDBModel.Staff" Width="1.5" PointX="17.625" PointY="0.75" />
+        <AssociationConnector Association="SoulardDBModel.AdultsStaff" />
+        <AssociationConnector Association="SoulardDBModel.AdultsStaff1" />
+        <EntityTypeShape EntityType="SoulardDBModel.Incidents" Width="1.5" PointX="2.875" PointY="7.875" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents1" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents2" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents3" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents4" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents5" />
+        <AssociationConnector Association="SoulardDBModel.AdultsIncidents6" />
+        <EntityTypeShape EntityType="SoulardDBModel.VisitorContactTracking" Width="1.5" PointX="6.125" PointY="8" />
+        <AssociationConnector Association="SoulardDBModel.FK_VisitorContactTrackingAdults" />
+        <AssociationConnector Association="SoulardDBModel.FK_EnteredByAdultId" />
+        <AssociationConnector Association="SoulardDBModel.FK_ContactedByAdultId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

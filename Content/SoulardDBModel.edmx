@@ -1,0 +1,1526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SoulardDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SoulardDBModelStoreContainer">
+    <EntitySet Name="NurseryClients" EntityType="SoulardDBModel.Store.NurseryClients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Adults" EntityType="SoulardDBModel.Store.Adults" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactInfoes" EntityType="SoulardDBModel.Store.ContactInfoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactPreferences" EntityType="SoulardDBModel.Store.ContactPreferences" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Children" EntityType="SoulardDBModel.Store.Children" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Memberships" EntityType="SoulardDBModel.Store.Memberships" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SpiritualGifts1" EntityType="SoulardDBModel.Store.SpiritualGifts1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Values" EntityType="SoulardDBModel.Store.Values" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmergencyContacts" EntityType="SoulardDBModel.Store.EmergencyContacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Staffs" EntityType="SoulardDBModel.Store.Staffs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Incidents" EntityType="SoulardDBModel.Store.Incidents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AdultsIncidents6" EntityType="SoulardDBModel.Store.AdultsIncidents6" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Child_ContactInfo" Association="SoulardDBModel.Store.ChildrenContactInfo">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="ContactInfo" EntitySet="ContactInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_ContactInfo" Association="SoulardDBModel.Store.AdultsContactInfo">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="ContactInfo" EntitySet="ContactInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Contact_Preference" Association="SoulardDBModel.Store.AdultsContactPreference">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="ContactPreference" EntitySet="ContactPreferences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Child_Contact_Preference" Association="SoulardDBModel.Store.ChildrenContactPreference">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="ContactPreference" EntitySet="ContactPreferences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Children_Nursery_Clients" Association="SoulardDBModel.Store.ChildrenNurseryClients">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="NurseryClients" EntitySet="NurseryClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Male_Parent_of_Nursery" Association="SoulardDBModel.Store.AdultsNurseryClients2">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="NurseryClients" EntitySet="NurseryClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Female_Parent_to_Nursery" Association="SoulardDBModel.Store.AdultsNurseryClients3">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="NurseryClients" EntitySet="NurseryClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Male_Parent_of_Children" Association="SoulardDBModel.Store.AdultsChildren">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Children" EntitySet="Children" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Female_Parent_of_Children" Association="SoulardDBModel.Store.AdultsChildren1">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Children" EntitySet="Children" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Memberships" Association="SoulardDBModel.Store.AdultsMemberships">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Child_Memberships" Association="SoulardDBModel.Store.ChildrenMemberships">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="Memberships" EntitySet="Memberships" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_SpiritualGifts" Association="SoulardDBModel.Store.AdultsSpiritualGifts">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="SpiritualGifts" EntitySet="SpiritualGifts1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Children_SpiritualGifts" Association="SoulardDBModel.Store.ChildrenSpiritualGifts">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="SpiritualGifts" EntitySet="SpiritualGifts1" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Emergency_Contacts" Association="SoulardDBModel.Store.AdultsEmergencyContacts">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="EmergencyContacts" EntitySet="EmergencyContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Child_Emergency_Contacts" Association="SoulardDBModel.Store.ChildrenEmergencyContacts">
+      <End Role="Children" EntitySet="Children" />
+      <End Role="EmergencyContacts" EntitySet="EmergencyContacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adults_Staff_ID" Association="SoulardDBModel.Store.AdultsStaff">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Staff_Supervise" Association="SoulardDBModel.Store.AdultsStaff1">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Incident_Person1" Association="SoulardDBModel.Store.AdultsIncidents">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Incident_Person2" Association="SoulardDBModel.Store.AdultsIncidents1">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Incident_Person3" Association="SoulardDBModel.Store.AdultsIncidents2">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Incident_Person4" Association="SoulardDBModel.Store.AdultsIncidents3">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="AdultsIncidents4" Association="SoulardDBModel.Store.AdultsIncidents4">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Adult_Incident_Person6" Association="SoulardDBModel.Store.AdultsIncidents5">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="Incidents" EntitySet="Incidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdultsIncidents6_Adults" Association="SoulardDBModel.Store.FK_AdultsIncidents6_Adults">
+      <End Role="Adults" EntitySet="Adults" />
+      <End Role="AdultsIncidents6" EntitySet="AdultsIncidents6" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdultsIncidents6_Incidents" Association="SoulardDBModel.Store.FK_AdultsIncidents6_Incidents">
+      <End Role="Incidents" EntitySet="Incidents" />
+      <End Role="AdultsIncidents6" EntitySet="AdultsIncidents6" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="NurseryClients">
+    <Key>
+      <PropertyRef Name="NurseryClientId" />
+    </Key>
+    <Property Name="NurseryClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChildID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaleParentAdultID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FemaleParentAdulttID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ChildCallID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Child_ChildId" Type="int" Nullable="false" />
+    <Property Name="Adult2_AdultId" Type="int" Nullable="false" />
+    <Property Name="Adult3_AdultId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Adults">
+    <Key>
+      <PropertyRef Name="AdultId" />
+    </Key>
+    <Property Name="AdultId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Suffix" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Birthday" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhotoURL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactInfoes">
+    <Key>
+      <PropertyRef Name="ContactInfoID" />
+    </Key>
+    <Property Name="ContactInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber1Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber2Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber3Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email1Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email2Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="State" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Zip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MailingAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MailingCity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MailingState" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MailingZip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FacebookName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TwitterHandle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="InstagramName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Child_ChildId" Type="int" Nullable="false" />
+    <Property Name="Adult_AdultId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactPreferences">
+    <Key>
+      <PropertyRef Name="ContactPreferenceId" />
+    </Key>
+    <Property Name="ContactPreferenceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreferredContactMethod1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreferredContactMethod2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreferredContactMethod3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreferredContactMethod4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PreferredContactMethod5" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FK_Adult_Contact_Preference_AdultId" Type="int" Nullable="false" />
+    <Property Name="FK_Child_Contact_Preference_ChildId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Children">
+    <Key>
+      <PropertyRef Name="ChildId" />
+    </Key>
+    <Property Name="ChildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Suffix" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Birthday" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhotoURL" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaleParentId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FemaleParentId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adult_AdultId" Type="int" Nullable="false" />
+    <Property Name="Adult1_AdultId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Memberships">
+    <Key>
+      <PropertyRef Name="MemberId" />
+    </Key>
+    <Property Name="MemberId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdultId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Saved" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SalvationDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Baptized" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BaptizedDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateJoined" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MethodOfEntry" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransferedFrom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CopyOfLetter" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adult_AdultId" Type="int" Nullable="false" />
+    <Property Name="Child_ChildId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpiritualGifts1">
+    <Key>
+      <PropertyRef Name="SpiritualGiftListingsId" />
+    </Key>
+    <Property Name="SpiritualGiftListingsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpiritualGift1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift5" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment5" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift6" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment6" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift7" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment7" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SpiritualGift8" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GiftComment8" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adult_AdultId" Type="int" Nullable="false" />
+    <Property Name="Child_ChildId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Values">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccessLevel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmailType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmergencyContacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactSuffix" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactPhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactCity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactState" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EContactZip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseFirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseLastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseSuffix" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpousePhone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseCity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseState" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NonSpouseZip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adult_AdultId" Type="int" Nullable="false" />
+    <Property Name="Child_ChildId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staffs">
+    <Key>
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="StaffId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdultId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PositionTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PositionDuties" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SupervisorID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Expertise" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AreaInChargeOf" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Role" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdultIDLink_AdultId" Type="int" Nullable="false" />
+    <Property Name="AdultStaffSupervisor_AdultId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Incidents">
+    <Key>
+      <PropertyRef Name="IncidentID" />
+    </Key>
+    <Property Name="IncidentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Person1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Person2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Person3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Person4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Person5" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Person6" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Witness1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Witness2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Witness3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Witness4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EnteredBy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdultPerson1_AdultId" Type="int" Nullable="false" />
+    <Property Name="AdultPerson2_AdultId" Type="int" Nullable="false" />
+    <Property Name="AdultPerson3_AdultId" Type="int" Nullable="false" />
+    <Property Name="AdultPerson4_AdultId" Type="int" Nullable="false" />
+    <Property Name="AdultsIncidents4_Incidents_AdultId" Type="int" Nullable="false" />
+    <Property Name="AdultsIncidents5_Incidents_AdultId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdultsIncidents6">
+    <Key>
+      <PropertyRef Name="FK_Adult_Incidents_EnteredBy_AdultId" />
+      <PropertyRef Name="Incidents6_IncidentID" />
+    </Key>
+    <Property Name="FK_Adult_Incidents_EnteredBy_AdultId" Type="int" Nullable="false" />
+    <Property Name="Incidents6_IncidentID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ChildrenContactInfo">
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="1" />
+    <End Role="ContactInfo" Type="SoulardDBModel.Store.ContactInfoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="ContactInfo">
+        <PropertyRef Name="Child_ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsContactInfo">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="ContactInfo" Type="SoulardDBModel.Store.ContactInfoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="ContactInfo">
+        <PropertyRef Name="Adult_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsContactPreference">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="ContactPreference" Type="SoulardDBModel.Store.ContactPreferences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="ContactPreference">
+        <PropertyRef Name="FK_Adult_Contact_Preference_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChildrenContactPreference">
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="1" />
+    <End Role="ContactPreference" Type="SoulardDBModel.Store.ContactPreferences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="ContactPreference">
+        <PropertyRef Name="FK_Child_Contact_Preference_ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChildrenNurseryClients">
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="1" />
+    <End Role="NurseryClients" Type="SoulardDBModel.Store.NurseryClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="NurseryClients">
+        <PropertyRef Name="Child_ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsNurseryClients2">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="NurseryClients" Type="SoulardDBModel.Store.NurseryClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="NurseryClients">
+        <PropertyRef Name="Adult2_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsNurseryClients3">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="NurseryClients" Type="SoulardDBModel.Store.NurseryClients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="NurseryClients">
+        <PropertyRef Name="Adult3_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsChildren">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Children">
+        <PropertyRef Name="Adult_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsChildren1">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Children">
+        <PropertyRef Name="Adult1_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsMemberships">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Memberships" Type="SoulardDBModel.Store.Memberships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="Adult_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChildrenMemberships">
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="1" />
+    <End Role="Memberships" Type="SoulardDBModel.Store.Memberships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="Memberships">
+        <PropertyRef Name="Child_ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsSpiritualGifts">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="SpiritualGifts" Type="SoulardDBModel.Store.SpiritualGifts1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="SpiritualGifts">
+        <PropertyRef Name="Adult_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChildrenSpiritualGifts">
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="1" />
+    <End Role="SpiritualGifts" Type="SoulardDBModel.Store.SpiritualGifts1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="SpiritualGifts">
+        <PropertyRef Name="Child_ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsEmergencyContacts">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="EmergencyContacts" Type="SoulardDBModel.Store.EmergencyContacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="EmergencyContacts">
+        <PropertyRef Name="Adult_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChildrenEmergencyContacts">
+    <End Role="Children" Type="SoulardDBModel.Store.Children" Multiplicity="1" />
+    <End Role="EmergencyContacts" Type="SoulardDBModel.Store.EmergencyContacts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Children">
+        <PropertyRef Name="ChildId" />
+      </Principal>
+      <Dependent Role="EmergencyContacts">
+        <PropertyRef Name="Child_ChildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsStaff">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Staff" Type="SoulardDBModel.Store.Staffs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="AdultIDLink_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsStaff1">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Staff" Type="SoulardDBModel.Store.Staffs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="AdultStaffSupervisor_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsIncidents">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="AdultPerson1_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsIncidents1">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="AdultPerson2_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsIncidents2">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="AdultPerson3_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsIncidents3">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="AdultPerson4_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsIncidents4">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="AdultsIncidents4_Incidents_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdultsIncidents5">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="Incidents">
+        <PropertyRef Name="AdultsIncidents5_Incidents_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdultsIncidents6_Adults">
+    <End Role="Adults" Type="SoulardDBModel.Store.Adults" Multiplicity="1" />
+    <End Role="AdultsIncidents6" Type="SoulardDBModel.Store.AdultsIncidents6" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adults">
+        <PropertyRef Name="AdultId" />
+      </Principal>
+      <Dependent Role="AdultsIncidents6">
+        <PropertyRef Name="FK_Adult_Incidents_EnteredBy_AdultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdultsIncidents6_Incidents">
+    <End Role="AdultsIncidents6" Type="SoulardDBModel.Store.AdultsIncidents6" Multiplicity="*" />
+    <End Role="Incidents" Type="SoulardDBModel.Store.Incidents" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Incidents">
+        <PropertyRef Name="IncidentID" />
+      </Principal>
+      <Dependent Role="AdultsIncidents6">
+        <PropertyRef Name="Incidents6_IncidentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SoulardDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="SoulardDBModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="NurseryClients" EntityType="SoulardDBModel.NurseryClients" />
+          <EntitySet Name="Adults" EntityType="SoulardDBModel.Adults" />
+          <EntitySet Name="ContactInfoes" EntityType="SoulardDBModel.ContactInfo" />
+          <EntitySet Name="ContactPreferences" EntityType="SoulardDBModel.ContactPreference" />
+          <EntitySet Name="Children" EntityType="SoulardDBModel.Children" />
+          <AssociationSet Name="FK_Child_ContactInfo" Association="SoulardDBModel.ChildrenContactInfo">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="ContactInfo" EntitySet="ContactInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_ContactInfo" Association="SoulardDBModel.AdultsContactInfo">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="ContactInfo" EntitySet="ContactInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_Contact_Preference" Association="SoulardDBModel.AdultsContactPreference">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="ContactPreference" EntitySet="ContactPreferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Contact_Preference" Association="SoulardDBModel.ChildrenContactPreference">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="ContactPreference" EntitySet="ContactPreferences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Children_Nursery_Clients" Association="SoulardDBModel.ChildrenNurseryClients">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="NurseryClients" EntitySet="NurseryClients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Male_Parent_of_Nursery" Association="SoulardDBModel.AdultsNurseryClients2">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="NurseryClients" EntitySet="NurseryClients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Female_Parent_to_Nursery" Association="SoulardDBModel.AdultsNurseryClients3">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="NurseryClients" EntitySet="NurseryClients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Male_Parent_of_Children" Association="SoulardDBModel.AdultsChildren">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Children" EntitySet="Children" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Female_Parent_of_Children" Association="SoulardDBModel.AdultsChildren1">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Children" EntitySet="Children" />
+          </AssociationSet>
+          <EntitySet Name="Memberships" EntityType="SoulardDBModel.Memberships" />
+          <AssociationSet Name="FK_Adult_Memberships" Association="SoulardDBModel.AdultsMemberships">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Memberships" Association="SoulardDBModel.ChildrenMemberships">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <EntitySet Name="SpiritualGifts1" EntityType="SoulardDBModel.SpiritualGifts" />
+          <AssociationSet Name="FK_Adult_SpiritualGifts" Association="SoulardDBModel.AdultsSpiritualGifts">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="SpiritualGifts" EntitySet="SpiritualGifts1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Children_SpiritualGifts" Association="SoulardDBModel.ChildrenSpiritualGifts">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="SpiritualGifts" EntitySet="SpiritualGifts1" />
+          </AssociationSet>
+          <EntitySet Name="Values" EntityType="SoulardDBModel.Values" />
+          <EntitySet Name="EmergencyContacts" EntityType="SoulardDBModel.EmergencyContacts" />
+          <AssociationSet Name="FK_Adult_Emergency_Contacts" Association="SoulardDBModel.AdultsEmergencyContacts">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="EmergencyContacts" EntitySet="EmergencyContacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Child_Emergency_Contacts" Association="SoulardDBModel.ChildrenEmergencyContacts">
+            <End Role="Children" EntitySet="Children" />
+            <End Role="EmergencyContacts" EntitySet="EmergencyContacts" />
+          </AssociationSet>
+          <EntitySet Name="Staffs" EntityType="SoulardDBModel.Staff" />
+          <AssociationSet Name="FK_Adults_Staff_ID" Association="SoulardDBModel.AdultsStaff">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_Staff_Supervise" Association="SoulardDBModel.AdultsStaff1">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <EntitySet Name="Incidents" EntityType="SoulardDBModel.Incidents" />
+          <AssociationSet Name="FK_Adult_Incident_Person1" Association="SoulardDBModel.AdultsIncidents">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_Incident_Person2" Association="SoulardDBModel.AdultsIncidents1">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_Incident_Person3" Association="SoulardDBModel.AdultsIncidents2">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_Incident_Person4" Association="SoulardDBModel.AdultsIncidents3">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="AdultsIncidents4" Association="SoulardDBModel.AdultsIncidents4">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adult_Incident_Person6" Association="SoulardDBModel.AdultsIncidents5">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <AssociationSet Name="AdultsIncidents6" Association="SoulardDBModel.AdultsIncidents6">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="Incidents" EntitySet="Incidents" />
+          </AssociationSet>
+          <EntitySet Name="VisitorContactTrackings" EntityType="SoulardDBModel.VisitorContactTracking" />
+          <AssociationSet Name="FK_VisitorContactTrackingAdults" Association="SoulardDBModel.FK_VisitorContactTrackingAdults">
+            <End Role="VisitorContactTracking" EntitySet="VisitorContactTrackings" />
+            <End Role="Adults" EntitySet="Adults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EnteredByAdultId" Association="SoulardDBModel.FK_EnteredByAdultId">
+            <End Role="VisitorContactTracking" EntitySet="VisitorContactTrackings" />
+            <End Role="Adults" EntitySet="Adults" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactedByAdultId" Association="SoulardDBModel.FK_ContactedByAdultId">
+            <End Role="VisitorContactTracking" EntitySet="VisitorContactTrackings" />
+            <End Role="Adults" EntitySet="Adults" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="NurseryClients">
+          <Key>
+            <PropertyRef Name="NurseryClientId" />
+          </Key>
+          <Property Type="Int32" Name="NurseryClientId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ChildID" Nullable="false" />
+          <Property Type="String" Name="MaleParentAdultID" Nullable="false" />
+          <Property Type="String" Name="FemaleParentAdultID" Nullable="false" />
+          <Property Type="String" Name="ChildCallID" Nullable="false" />
+          <NavigationProperty Name="Child" Relationship="SoulardDBModel.ChildrenNurseryClients" FromRole="NurseryClients" ToRole="Children" />
+          <NavigationProperty Name="FemaleAdult" Relationship="SoulardDBModel.AdultsNurseryClients2" FromRole="NurseryClients" ToRole="Adults" />
+          <NavigationProperty Name="MaleAdult" Relationship="SoulardDBModel.AdultsNurseryClients3" FromRole="NurseryClients" ToRole="Adults" />
+        </EntityType>
+        <EntityType Name="Adults">
+          <Key>
+            <PropertyRef Name="AdultId" />
+          </Key>
+          <Property Type="Int32" Name="AdultId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" />
+          <Property Type="String" Name="MiddleName" Nullable="false" />
+          <Property Type="String" Name="LastName" Nullable="false" />
+          <Property Type="String" Name="Suffix" Nullable="false" />
+          <Property Type="String" Name="Birthday" Nullable="false" />
+          <Property Type="String" Name="PhotoURL" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="false" />
+          <NavigationProperty Name="ContactInfo" Relationship="SoulardDBModel.AdultsContactInfo" FromRole="Adults" ToRole="ContactInfo" />
+          <NavigationProperty Name="ContactPreferences" Relationship="SoulardDBModel.AdultsContactPreference" FromRole="Adults" ToRole="ContactPreference" />
+          <NavigationProperty Name="NurseryFemaleParent" Relationship="SoulardDBModel.AdultsNurseryClients2" FromRole="Adults" ToRole="NurseryClients" />
+          <NavigationProperty Name="NurseryMaleParent" Relationship="SoulardDBModel.AdultsNurseryClients3" FromRole="Adults" ToRole="NurseryClients" />
+          <NavigationProperty Name="Children" Relationship="SoulardDBModel.AdultsChildren" FromRole="Adults" ToRole="Children" />
+          <NavigationProperty Name="Children1" Relationship="SoulardDBModel.AdultsChildren1" FromRole="Adults" ToRole="Children" />
+          <NavigationProperty Name="Memberships" Relationship="SoulardDBModel.AdultsMemberships" FromRole="Adults" ToRole="Memberships" />
+          <NavigationProperty Name="SpiritualGifts" Relationship="SoulardDBModel.AdultsSpiritualGifts" FromRole="Adults" ToRole="SpiritualGifts" />
+          <NavigationProperty Name="EmergencyContacts" Relationship="SoulardDBModel.AdultsEmergencyContacts" FromRole="Adults" ToRole="EmergencyContacts" />
+          <NavigationProperty Name="Staffs" Relationship="SoulardDBModel.AdultsStaff" FromRole="Adults" ToRole="Staff" />
+          <NavigationProperty Name="Staffs1" Relationship="SoulardDBModel.AdultsStaff1" FromRole="Adults" ToRole="Staff" />
+          <NavigationProperty Name="Incidents" Relationship="SoulardDBModel.AdultsIncidents" FromRole="Adults" ToRole="Incidents" />
+          <NavigationProperty Name="VisitorIdContactTracking" Relationship="SoulardDBModel.FK_VisitorContactTrackingAdults" FromRole="Adults" ToRole="VisitorContactTracking" />
+          <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId" Nullable="false" />
+          <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId1" Nullable="false" />
+          <NavigationProperty Name="EnteredByAdultId" Relationship="SoulardDBModel.FK_EnteredByAdultId" FromRole="Adults" ToRole="VisitorContactTracking" />
+          <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId2" Nullable="false" />
+          <NavigationProperty Name="ContactedByAdultId" Relationship="SoulardDBModel.FK_ContactedByAdultId" FromRole="Adults" ToRole="VisitorContactTracking" />
+          <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId3" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContactInfo">
+          <Key>
+            <PropertyRef Name="ContactInfoID" />
+          </Key>
+          <Property Type="Int32" Name="ContactInfoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContactID" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber1" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber1Type" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber2" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber2Type" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber3" Nullable="false" />
+          <Property Type="String" Name="PhoneNumber3Type" Nullable="false" />
+          <Property Type="String" Name="Email1" Nullable="false" />
+          <Property Type="String" Name="Email1Type" Nullable="false" />
+          <Property Type="String" Name="Email2" Nullable="false" />
+          <Property Type="String" Name="Email2Type" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" />
+          <Property Type="String" Name="City" Nullable="false" />
+          <Property Type="String" Name="State" Nullable="false" />
+          <Property Type="String" Name="Zip" Nullable="false" />
+          <Property Type="String" Name="MailingAddress" Nullable="false" />
+          <Property Type="String" Name="MailingCity" Nullable="false" />
+          <Property Type="String" Name="MailingState" Nullable="false" />
+          <Property Type="String" Name="MailingZip" Nullable="false" />
+          <Property Type="String" Name="FacebookName" Nullable="false" />
+          <Property Type="String" Name="TwitterHandle" Nullable="false" />
+          <Property Type="String" Name="InstagramName" Nullable="false" />
+          <NavigationProperty Name="Child" Relationship="SoulardDBModel.ChildrenContactInfo" FromRole="ContactInfo" ToRole="Children" />
+          <NavigationProperty Name="Adult" Relationship="SoulardDBModel.AdultsContactInfo" FromRole="ContactInfo" ToRole="Adults" />
+        </EntityType>
+        <EntityType Name="ContactPreference">
+          <Key>
+            <PropertyRef Name="ContactPreferenceId" />
+          </Key>
+          <Property Type="Int32" Name="ContactPreferenceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContactID" Nullable="false" />
+          <Property Type="String" Name="PreferredContactMethod1" Nullable="false" />
+          <Property Type="String" Name="PreferredContactMethod2" Nullable="false" />
+          <Property Type="String" Name="PreferredContactMethod3" Nullable="false" />
+          <Property Type="String" Name="PreferredContactMethod4" Nullable="false" />
+          <Property Type="String" Name="PreferredContactMethod5" Nullable="false" />
+          <NavigationProperty Name="FK_Adult_Contact_Preference" Relationship="SoulardDBModel.AdultsContactPreference" FromRole="ContactPreference" ToRole="Adults" />
+          <NavigationProperty Name="FK_Child_Contact_Preference" Relationship="SoulardDBModel.ChildrenContactPreference" FromRole="ContactPreference" ToRole="Children" />
+        </EntityType>
+        <EntityType Name="Children">
+          <Key>
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Type="Int32" Name="ChildId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" />
+          <Property Type="String" Name="MiddleName" Nullable="false" />
+          <Property Type="String" Name="LastName" Nullable="false" />
+          <Property Type="String" Name="Suffix" Nullable="false" />
+          <Property Type="String" Name="Birthday" Nullable="false" />
+          <Property Type="String" Name="PhotoURL" Nullable="false" />
+          <Property Type="String" Name="Gender" Nullable="false" />
+          <Property Type="String" Name="MaleParentId" Nullable="false" />
+          <Property Type="String" Name="FemaleParentId" Nullable="false" />
+          <NavigationProperty Name="ContactInfoes" Relationship="SoulardDBModel.ChildrenContactInfo" FromRole="Children" ToRole="ContactInfo" />
+          <NavigationProperty Name="ContactPreferences" Relationship="SoulardDBModel.ChildrenContactPreference" FromRole="Children" ToRole="ContactPreference" />
+          <NavigationProperty Name="NurseryClients" Relationship="SoulardDBModel.ChildrenNurseryClients" FromRole="Children" ToRole="NurseryClients" />
+          <NavigationProperty Name="Adult" Relationship="SoulardDBModel.AdultsChildren" FromRole="Children" ToRole="Adults" />
+          <NavigationProperty Name="Adult1" Relationship="SoulardDBModel.AdultsChildren1" FromRole="Children" ToRole="Adults" />
+          <NavigationProperty Name="Memberships" Relationship="SoulardDBModel.ChildrenMemberships" FromRole="Children" ToRole="Memberships" />
+          <NavigationProperty Name="SpiritualGifts" Relationship="SoulardDBModel.ChildrenSpiritualGifts" FromRole="Children" ToRole="SpiritualGifts" />
+          <NavigationProperty Name="EmergencyContacts" Relationship="SoulardDBModel.ChildrenEmergencyContacts" FromRole="Children" ToRole="EmergencyContacts" />
+        </EntityType>
+        <Association Name="ChildrenContactInfo">
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="1" />
+          <End Type="SoulardDBModel.ContactInfo" Role="ContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsContactInfo">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.ContactInfo" Role="ContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsContactPreference">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.ContactPreference" Role="ContactPreference" Multiplicity="*" />
+        </Association>
+        <Association Name="ChildrenContactPreference">
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="1" />
+          <End Type="SoulardDBModel.ContactPreference" Role="ContactPreference" Multiplicity="*" />
+        </Association>
+        <Association Name="ChildrenNurseryClients">
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="1" />
+          <End Type="SoulardDBModel.NurseryClients" Role="NurseryClients" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsNurseryClients2">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.NurseryClients" Role="NurseryClients" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsNurseryClients3">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.NurseryClients" Role="NurseryClients" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsChildren">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsChildren1">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Memberships">
+          <Key>
+            <PropertyRef Name="MemberId" />
+          </Key>
+          <Property Type="Int32" Name="MemberId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PersonId" Nullable="false" />
+          <Property Type="String" Name="Saved" Nullable="false" />
+          <Property Type="String" Name="SalvationDate" Nullable="false" />
+          <Property Type="String" Name="Baptized" Nullable="false" />
+          <Property Type="String" Name="BaptizedDate" Nullable="false" />
+          <Property Type="String" Name="DateJoined" Nullable="false" />
+          <Property Type="String" Name="MethodOfEntry" Nullable="false" />
+          <Property Type="String" Name="TransferedFrom" Nullable="false" />
+          <Property Type="String" Name="CopyOfLetter" Nullable="false" />
+          <NavigationProperty Name="Adult" Relationship="SoulardDBModel.AdultsMemberships" FromRole="Memberships" ToRole="Adults" />
+          <NavigationProperty Name="Child" Relationship="SoulardDBModel.ChildrenMemberships" FromRole="Memberships" ToRole="Children" />
+        </EntityType>
+        <Association Name="AdultsMemberships">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Memberships" Role="Memberships" Multiplicity="*" />
+        </Association>
+        <Association Name="ChildrenMemberships">
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="1" />
+          <End Type="SoulardDBModel.Memberships" Role="Memberships" Multiplicity="*" />
+        </Association>
+        <EntityType Name="SpiritualGifts">
+          <Key>
+            <PropertyRef Name="SpiritualGiftListingsId" />
+          </Key>
+          <Property Type="Int32" Name="SpiritualGiftListingsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SpiritualGift1" Nullable="false" />
+          <Property Type="String" Name="GiftComment1" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift2" Nullable="false" />
+          <Property Type="String" Name="GiftComment2" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift3" Nullable="false" />
+          <Property Type="String" Name="GiftComment3" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift4" Nullable="false" />
+          <Property Type="String" Name="GiftComment4" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift5" Nullable="false" />
+          <Property Type="String" Name="GiftComment5" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift6" Nullable="false" />
+          <Property Type="String" Name="GiftComment6" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift7" Nullable="false" />
+          <Property Type="String" Name="GiftComment7" Nullable="false" />
+          <Property Type="String" Name="SpiritualGift8" Nullable="false" />
+          <Property Type="String" Name="GiftComment8" Nullable="false" />
+          <NavigationProperty Name="Adult" Relationship="SoulardDBModel.AdultsSpiritualGifts" FromRole="SpiritualGifts" ToRole="Adults" />
+          <NavigationProperty Name="Child" Relationship="SoulardDBModel.ChildrenSpiritualGifts" FromRole="SpiritualGifts" ToRole="Children" />
+          <Property Type="String" Name="PersonId" Nullable="false" />
+        </EntityType>
+        <Association Name="AdultsSpiritualGifts">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.SpiritualGifts" Role="SpiritualGifts" Multiplicity="*" />
+        </Association>
+        <Association Name="ChildrenSpiritualGifts">
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="1" />
+          <End Type="SoulardDBModel.SpiritualGifts" Role="SpiritualGifts" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Values">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AccessLevel" Nullable="false" />
+          <Property Type="String" Name="PhoneType" Nullable="false" />
+          <Property Type="String" Name="EmailType" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Suffix" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmergencyContacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ContactId" Nullable="false" />
+          <Property Type="String" Name="EContactFirstName" Nullable="false" />
+          <Property Type="String" Name="EContactLastName" Nullable="false" />
+          <Property Type="String" Name="EContactSuffix" Nullable="false" />
+          <Property Type="String" Name="EContactPhone" Nullable="false" />
+          <Property Type="String" Name="EContactAddress" Nullable="false" />
+          <Property Type="String" Name="EContactCity" Nullable="false" />
+          <Property Type="String" Name="EContactState" Nullable="false" />
+          <Property Type="String" Name="EContactZip" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldFirstName" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldLastName" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldSuffix" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldPhone" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldAddress" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldCity" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldState" Nullable="false" />
+          <Property Type="String" Name="NonHouseHoldZip" Nullable="false" />
+          <NavigationProperty Name="Adult" Relationship="SoulardDBModel.AdultsEmergencyContacts" FromRole="EmergencyContacts" ToRole="Adults" />
+          <NavigationProperty Name="Child" Relationship="SoulardDBModel.ChildrenEmergencyContacts" FromRole="EmergencyContacts" ToRole="Children" />
+        </EntityType>
+        <Association Name="AdultsEmergencyContacts">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.EmergencyContacts" Role="EmergencyContacts" Multiplicity="*" />
+        </Association>
+        <Association Name="ChildrenEmergencyContacts">
+          <End Type="SoulardDBModel.Children" Role="Children" Multiplicity="1" />
+          <End Type="SoulardDBModel.EmergencyContacts" Role="EmergencyContacts" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="StaffId" />
+          </Key>
+          <Property Type="Int32" Name="StaffId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AdultId" Nullable="false" />
+          <Property Type="String" Name="PositionTitle" Nullable="false" />
+          <Property Type="String" Name="PositionDuties" Nullable="false" />
+          <Property Type="String" Name="SupervisorId" Nullable="false" />
+          <Property Type="String" Name="Expertise" Nullable="false" />
+          <Property Type="String" Name="AreaInChargeOf" Nullable="false" />
+          <Property Type="String" Name="Role" Nullable="false" />
+          <NavigationProperty Name="AdultIDLink" Relationship="SoulardDBModel.AdultsStaff" FromRole="Staff" ToRole="Adults" />
+          <NavigationProperty Name="AdultStaffSupervisor" Relationship="SoulardDBModel.AdultsStaff1" FromRole="Staff" ToRole="Adults" />
+        </EntityType>
+        <Association Name="AdultsStaff">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Staff" Role="Staff" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsStaff1">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Staff" Role="Staff" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Incidents">
+          <Key>
+            <PropertyRef Name="IncidentID" />
+          </Key>
+          <Property Type="Int32" Name="IncidentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PersonsInvolved" Nullable="false" />
+          <Property Type="String" Name="Witnesses" Nullable="false" />
+          <Property Type="String" Name="Comments" Nullable="false" />
+          <Property Type="String" Name="EnteredBy" Nullable="false" />
+          <NavigationProperty Name="FK_Adult_Incidents_EnteredBy" Relationship="SoulardDBModel.AdultsIncidents6" FromRole="Incidents" ToRole="Adults" />
+        </EntityType>
+        <Association Name="AdultsIncidents">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsIncidents1">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsIncidents2">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsIncidents3">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsIncidents4">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsIncidents5">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="1" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <Association Name="AdultsIncidents6">
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="*" />
+          <End Type="SoulardDBModel.Incidents" Role="Incidents" Multiplicity="*" />
+        </Association>
+        <EntityType Name="VisitorContactTracking">
+          <Key>
+            <PropertyRef Name="ContactTrackingId" />
+          </Key>
+          <Property Type="Int32" Name="ContactTrackingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VisitorId" Nullable="false" />
+          <Property Type="String" Name="EnteredBy" Nullable="false" />
+          <Property Type="String" Name="ContactedHow" Nullable="false" />
+          <Property Type="String" Name="ContactedWhen" Nullable="false" />
+          <Property Type="String" Name="Notes" Nullable="false" />
+          <Property Type="String" Name="ContactedBy" Nullable="false" />
+          <NavigationProperty Name="VisitorIdContactTracking" Relationship="SoulardDBModel.FK_VisitorContactTrackingAdults" FromRole="VisitorContactTracking" ToRole="Adults" />
+          <NavigationProperty Name="EnteredByAdultId" Relationship="SoulardDBModel.FK_EnteredByAdultId" FromRole="VisitorContactTracking" ToRole="Adults" />
+          <NavigationProperty Name="ContactedByAdultId" Relationship="SoulardDBModel.FK_ContactedByAdultId" FromRole="VisitorContactTracking" ToRole="Adults" />
+        </EntityType>
+        <Association Name="FK_VisitorContactTrackingAdults">
+          <End Type="SoulardDBModel.VisitorContactTracking" Role="VisitorContactTracking" Multiplicity="1" />
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorContactTracking">
+              <PropertyRef Name="ContactTrackingId" />
+            </Principal>
+            <Dependent Role="Adults">
+              <PropertyRef Name="VisitorContactTrackingContactTrackingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EnteredByAdultId">
+          <End Type="SoulardDBModel.VisitorContactTracking" Role="VisitorContactTracking" Multiplicity="1" />
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorContactTracking">
+              <PropertyRef Name="ContactTrackingId" />
+            </Principal>
+            <Dependent Role="Adults">
+              <PropertyRef Name="VisitorContactTrackingContactTrackingId2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactedByAdultId">
+          <End Type="SoulardDBModel.VisitorContactTracking" Role="VisitorContactTracking" Multiplicity="1" />
+          <End Type="SoulardDBModel.Adults" Role="Adults" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VisitorContactTracking">
+              <PropertyRef Name="ContactTrackingId" />
+            </Principal>
+            <Dependent Role="Adults">
+              <PropertyRef Name="VisitorContactTrackingContactTrackingId3" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SoulardDBModelStoreContainer" CdmEntityContainer="SoulardDBModelContainer">
+    <EntitySetMapping Name="NurseryClients">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.NurseryClients)">
+        <MappingFragment StoreEntitySet="NurseryClients">
+          <ScalarProperty Name="NurseryClientId" ColumnName="NurseryClientId" />
+          <ScalarProperty Name="ChildID" ColumnName="ChildID" />
+          <ScalarProperty Name="MaleParentAdultID" ColumnName="MaleParentAdultID" />
+          <ScalarProperty Name="FemaleParentAdultID" ColumnName="FemaleParentAdulttID" />
+          <ScalarProperty Name="ChildCallID" ColumnName="ChildCallID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Adults">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.Adults)">
+        <MappingFragment StoreEntitySet="Adults">
+          <ScalarProperty Name="AdultId" ColumnName="AdultId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="PhotoURL" ColumnName="PhotoURL" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactInfoes">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.ContactInfo)">
+        <MappingFragment StoreEntitySet="ContactInfoes">
+          <ScalarProperty Name="ContactInfoID" ColumnName="ContactInfoID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+          <ScalarProperty Name="PhoneNumber1Type" ColumnName="PhoneNumber1Type" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="PhoneNumber2Type" ColumnName="PhoneNumber2Type" />
+          <ScalarProperty Name="PhoneNumber3" ColumnName="PhoneNumber3" />
+          <ScalarProperty Name="PhoneNumber3Type" ColumnName="PhoneNumber3Type" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="Email1Type" ColumnName="Email1Type" />
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="Email2Type" ColumnName="Email2Type" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="MailingAddress" ColumnName="MailingAddress" />
+          <ScalarProperty Name="MailingCity" ColumnName="MailingCity" />
+          <ScalarProperty Name="MailingState" ColumnName="MailingState" />
+          <ScalarProperty Name="MailingZip" ColumnName="MailingZip" />
+          <ScalarProperty Name="FacebookName" ColumnName="FacebookName" />
+          <ScalarProperty Name="TwitterHandle" ColumnName="TwitterHandle" />
+          <ScalarProperty Name="InstagramName" ColumnName="InstagramName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactPreferences">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.ContactPreference)">
+        <MappingFragment StoreEntitySet="ContactPreferences">
+          <ScalarProperty Name="ContactPreferenceId" ColumnName="ContactPreferenceId" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="PreferredContactMethod1" ColumnName="PreferredContactMethod1" />
+          <ScalarProperty Name="PreferredContactMethod2" ColumnName="PreferredContactMethod2" />
+          <ScalarProperty Name="PreferredContactMethod3" ColumnName="PreferredContactMethod3" />
+          <ScalarProperty Name="PreferredContactMethod4" ColumnName="PreferredContactMethod4" />
+          <ScalarProperty Name="PreferredContactMethod5" ColumnName="PreferredContactMethod5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Children">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.Children)">
+        <MappingFragment StoreEntitySet="Children">
+          <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="PhotoURL" ColumnName="PhotoURL" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="MaleParentId" ColumnName="MaleParentId" />
+          <ScalarProperty Name="FemaleParentId" ColumnName="FemaleParentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memberships">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.Memberships)">
+        <MappingFragment StoreEntitySet="Memberships">
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="PersonId" ColumnName="AdultId" />
+          <ScalarProperty Name="Saved" ColumnName="Saved" />
+          <ScalarProperty Name="SalvationDate" ColumnName="SalvationDate" />
+          <ScalarProperty Name="Baptized" ColumnName="Baptized" />
+          <ScalarProperty Name="BaptizedDate" ColumnName="BaptizedDate" />
+          <ScalarProperty Name="DateJoined" ColumnName="DateJoined" />
+          <ScalarProperty Name="MethodOfEntry" ColumnName="MethodOfEntry" />
+          <ScalarProperty Name="TransferedFrom" ColumnName="TransferedFrom" />
+          <ScalarProperty Name="CopyOfLetter" ColumnName="CopyOfLetter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpiritualGifts1">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.SpiritualGifts)">
+        <MappingFragment StoreEntitySet="SpiritualGifts1">
+          <ScalarProperty Name="SpiritualGiftListingsId" ColumnName="SpiritualGiftListingsId" />
+          <ScalarProperty Name="SpiritualGift1" ColumnName="SpiritualGift1" />
+          <ScalarProperty Name="GiftComment1" ColumnName="GiftComment1" />
+          <ScalarProperty Name="SpiritualGift2" ColumnName="SpiritualGift2" />
+          <ScalarProperty Name="GiftComment2" ColumnName="GiftComment2" />
+          <ScalarProperty Name="SpiritualGift3" ColumnName="SpiritualGift3" />
+          <ScalarProperty Name="GiftComment3" ColumnName="GiftComment3" />
+          <ScalarProperty Name="SpiritualGift4" ColumnName="SpiritualGift4" />
+          <ScalarProperty Name="GiftComment4" ColumnName="GiftComment4" />
+          <ScalarProperty Name="SpiritualGift5" ColumnName="SpiritualGift5" />
+          <ScalarProperty Name="GiftComment5" ColumnName="GiftComment5" />
+          <ScalarProperty Name="SpiritualGift6" ColumnName="SpiritualGift6" />
+          <ScalarProperty Name="GiftComment6" ColumnName="GiftComment6" />
+          <ScalarProperty Name="SpiritualGift7" ColumnName="SpiritualGift7" />
+          <ScalarProperty Name="GiftComment7" ColumnName="GiftComment7" />
+          <ScalarProperty Name="SpiritualGift8" ColumnName="SpiritualGift8" />
+          <ScalarProperty Name="GiftComment8" ColumnName="GiftComment8" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Values">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.Values)">
+        <MappingFragment StoreEntitySet="Values">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+          <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+          <ScalarProperty Name="EmailType" ColumnName="EmailType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmergencyContacts">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.EmergencyContacts)">
+        <MappingFragment StoreEntitySet="EmergencyContacts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContactId" ColumnName="ContactID" />
+          <ScalarProperty Name="EContactFirstName" ColumnName="EContactFirstName" />
+          <ScalarProperty Name="EContactLastName" ColumnName="EContactLastName" />
+          <ScalarProperty Name="EContactSuffix" ColumnName="EContactSuffix" />
+          <ScalarProperty Name="EContactPhone" ColumnName="EContactPhone" />
+          <ScalarProperty Name="EContactAddress" ColumnName="EContactAddress" />
+          <ScalarProperty Name="EContactCity" ColumnName="EContactCity" />
+          <ScalarProperty Name="EContactState" ColumnName="EContactState" />
+          <ScalarProperty Name="EContactZip" ColumnName="EContactZip" />
+          <ScalarProperty Name="NonHouseHoldFirstName" ColumnName="NonSpouseFirstName" />
+          <ScalarProperty Name="NonHouseHoldLastName" ColumnName="NonSpouseLastName" />
+          <ScalarProperty Name="NonHouseHoldSuffix" ColumnName="NonSpouseSuffix" />
+          <ScalarProperty Name="NonHouseHoldPhone" ColumnName="NonSpousePhone" />
+          <ScalarProperty Name="NonHouseHoldAddress" ColumnName="NonSpouseAddress" />
+          <ScalarProperty Name="NonHouseHoldCity" ColumnName="NonSpouseCity" />
+          <ScalarProperty Name="NonHouseHoldState" ColumnName="NonSpouseState" />
+          <ScalarProperty Name="NonHouseHoldZip" ColumnName="NonSpouseZip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.Staff)">
+        <MappingFragment StoreEntitySet="Staffs">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="AdultId" ColumnName="AdultId" />
+          <ScalarProperty Name="PositionTitle" ColumnName="PositionTitle" />
+          <ScalarProperty Name="PositionDuties" ColumnName="PositionDuties" />
+          <ScalarProperty Name="SupervisorId" ColumnName="SupervisorID" />
+          <ScalarProperty Name="Expertise" ColumnName="Expertise" />
+          <ScalarProperty Name="AreaInChargeOf" ColumnName="AreaInChargeOf" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidents">
+      <EntityTypeMapping TypeName="IsTypeOf(SoulardDBModel.Incidents)">
+        <MappingFragment StoreEntitySet="Incidents">
+          <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+          <ScalarProperty Name="PersonsInvolved" ColumnName="Person1" />
+          <ScalarProperty Name="Witnesses" ColumnName="Witness1" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Child_ContactInfo" TypeName="SoulardDBModel.ChildrenContactInfo" StoreEntitySet="ContactInfoes">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="Child_ChildId" />
+      </EndProperty>
+      <EndProperty Name="ContactInfo">
+        <ScalarProperty Name="ContactInfoID" ColumnName="ContactInfoID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_ContactInfo" TypeName="SoulardDBModel.AdultsContactInfo" StoreEntitySet="ContactInfoes">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult_AdultId" />
+      </EndProperty>
+      <EndProperty Name="ContactInfo">
+        <ScalarProperty Name="ContactInfoID" ColumnName="ContactInfoID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Contact_Preference" TypeName="SoulardDBModel.AdultsContactPreference" StoreEntitySet="ContactPreferences">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="FK_Adult_Contact_Preference_AdultId" />
+      </EndProperty>
+      <EndProperty Name="ContactPreference">
+        <ScalarProperty Name="ContactPreferenceId" ColumnName="ContactPreferenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Child_Contact_Preference" TypeName="SoulardDBModel.ChildrenContactPreference" StoreEntitySet="ContactPreferences">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="FK_Child_Contact_Preference_ChildId" />
+      </EndProperty>
+      <EndProperty Name="ContactPreference">
+        <ScalarProperty Name="ContactPreferenceId" ColumnName="ContactPreferenceId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Children_Nursery_Clients" TypeName="SoulardDBModel.ChildrenNurseryClients" StoreEntitySet="NurseryClients">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="Child_ChildId" />
+      </EndProperty>
+      <EndProperty Name="NurseryClients">
+        <ScalarProperty Name="NurseryClientId" ColumnName="NurseryClientId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Male_Parent_of_Nursery" TypeName="SoulardDBModel.AdultsNurseryClients2" StoreEntitySet="NurseryClients">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult2_AdultId" />
+      </EndProperty>
+      <EndProperty Name="NurseryClients">
+        <ScalarProperty Name="NurseryClientId" ColumnName="NurseryClientId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Female_Parent_to_Nursery" TypeName="SoulardDBModel.AdultsNurseryClients3" StoreEntitySet="NurseryClients">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult3_AdultId" />
+      </EndProperty>
+      <EndProperty Name="NurseryClients">
+        <ScalarProperty Name="NurseryClientId" ColumnName="NurseryClientId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Male_Parent_of_Children" TypeName="SoulardDBModel.AdultsChildren" StoreEntitySet="Children">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Female_Parent_of_Children" TypeName="SoulardDBModel.AdultsChildren1" StoreEntitySet="Children">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult1_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Memberships" TypeName="SoulardDBModel.AdultsMemberships" StoreEntitySet="Memberships">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Memberships">
+        <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Child_Memberships" TypeName="SoulardDBModel.ChildrenMemberships" StoreEntitySet="Memberships">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="Child_ChildId" />
+      </EndProperty>
+      <EndProperty Name="Memberships">
+        <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_SpiritualGifts" TypeName="SoulardDBModel.AdultsSpiritualGifts" StoreEntitySet="SpiritualGifts1">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult_AdultId" />
+      </EndProperty>
+      <EndProperty Name="SpiritualGifts">
+        <ScalarProperty Name="SpiritualGiftListingsId" ColumnName="SpiritualGiftListingsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Children_SpiritualGifts" TypeName="SoulardDBModel.ChildrenSpiritualGifts" StoreEntitySet="SpiritualGifts1">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="Child_ChildId" />
+      </EndProperty>
+      <EndProperty Name="SpiritualGifts">
+        <ScalarProperty Name="SpiritualGiftListingsId" ColumnName="SpiritualGiftListingsId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Emergency_Contacts" TypeName="SoulardDBModel.AdultsEmergencyContacts" StoreEntitySet="EmergencyContacts">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="Adult_AdultId" />
+      </EndProperty>
+      <EndProperty Name="EmergencyContacts">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Child_Emergency_Contacts" TypeName="SoulardDBModel.ChildrenEmergencyContacts" StoreEntitySet="EmergencyContacts">
+      <EndProperty Name="Children">
+        <ScalarProperty Name="ChildId" ColumnName="Child_ChildId" />
+      </EndProperty>
+      <EndProperty Name="EmergencyContacts">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adults_Staff_ID" TypeName="SoulardDBModel.AdultsStaff" StoreEntitySet="Staffs">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultIDLink_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Staff">
+        <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Staff_Supervise" TypeName="SoulardDBModel.AdultsStaff1" StoreEntitySet="Staffs">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultStaffSupervisor_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Staff">
+        <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Incident_Person1" TypeName="SoulardDBModel.AdultsIncidents" StoreEntitySet="Incidents">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultPerson1_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Incident_Person2" TypeName="SoulardDBModel.AdultsIncidents1" StoreEntitySet="Incidents">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultPerson2_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Incident_Person3" TypeName="SoulardDBModel.AdultsIncidents2" StoreEntitySet="Incidents">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultPerson3_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Incident_Person4" TypeName="SoulardDBModel.AdultsIncidents3" StoreEntitySet="Incidents">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultPerson4_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdultsIncidents4" TypeName="SoulardDBModel.AdultsIncidents4" StoreEntitySet="Incidents">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultsIncidents4_Incidents_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Adult_Incident_Person6" TypeName="SoulardDBModel.AdultsIncidents5" StoreEntitySet="Incidents">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="AdultsIncidents5_Incidents_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AdultsIncidents6" TypeName="SoulardDBModel.AdultsIncidents6" StoreEntitySet="AdultsIncidents6">
+      <EndProperty Name="Adults">
+        <ScalarProperty Name="AdultId" ColumnName="FK_Adult_Incidents_EnteredBy_AdultId" />
+      </EndProperty>
+      <EndProperty Name="Incidents">
+        <ScalarProperty Name="IncidentID" ColumnName="Incidents6_IncidentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
