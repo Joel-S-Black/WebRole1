@@ -7,13 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebRole1.Content
+namespace DatabaseObjectClass
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Children
+    public partial class Children:Adult
     {
+        /*Disabled 12.19.2014
         public Children()
         {
             this.ContactInfoes = new HashSet<ContactInfo>();
@@ -23,19 +24,19 @@ namespace WebRole1.Content
             this.SpiritualGifts = new HashSet<SpiritualGifts>();
             this.EmergencyContacts = new HashSet<EmergencyContacts>();
         }
-    
+        */
         public int ChildId { get; set; }
         public string Title { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
         public string Suffix { get; set; }
-        public string Birthday { get; set; }
+        public DateTime Birthday { get; set; }//Birthday made DateTime, edmx had it as String
         public string PhotoURL { get; set; }
         public string Gender { get; set; }
         public string MaleParentId { get; set; }
         public string FemaleParentId { get; set; }
-    
+    /*disabled 12.19.2014
         public virtual ICollection<ContactInfo> ContactInfoes { get; set; }
         public virtual ICollection<ContactPreference> ContactPreferences { get; set; }
         public virtual ICollection<NurseryClients> NurseryClients { get; set; }
@@ -44,5 +45,6 @@ namespace WebRole1.Content
         public virtual ICollection<Memberships> Memberships { get; set; }
         public virtual ICollection<SpiritualGifts> SpiritualGifts { get; set; }
         public virtual ICollection<EmergencyContacts> EmergencyContacts { get; set; }
+     */
     }
 }

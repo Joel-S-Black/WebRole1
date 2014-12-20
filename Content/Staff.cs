@@ -7,23 +7,50 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebRole1.Content
+namespace DatabaseObjectClass
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Staff
-    {
+   
+    public partial class Staff:Adult
+    {  //Added in Title, FirstName, MiddleName, LastName, Suffix, Birthday, PhotoURL, Gender
         public int StaffId { get; set; }
-        public string AdultId { get; set; }
+        public int AdultId { get; set; }
+        public string Title { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public string Suffix { get; set; }
+        public DateTime Birthday { get; set; }
+        public string PhotoURL { get; set; }
+        public string Gender { get; set; }
         public string PositionTitle { get; set; }
         public string PositionDuties { get; set; }
         public string SupervisorId { get; set; }
         public string Expertise { get; set; }
         public string AreaInChargeOf { get; set; }
         public string Role { get; set; }
-    
+
+        public Staff() { }
+
+        public Staff(Adult adult)
+        {
+            this.AdultId = adult.AdultId;
+            this.Title = adult.Title;
+            this.FirstName = adult.FirstName;
+            this.MiddleName = adult.MiddleName;
+            this.LastName = adult.LastName;
+            this.Suffix = adult.Suffix;
+            this.Birthday = adult.Birthday;
+            this.PhotoURL = adult.PhotoURL;
+            this.Gender = adult.Gender;
+        }
+
+    /* Disabled 12.19.2014
         public virtual Adults AdultIDLink { get; set; }
         public virtual Adults AdultStaffSupervisor { get; set; }
+     */ 
     }
+
+    
 }
