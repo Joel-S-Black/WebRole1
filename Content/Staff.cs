@@ -31,9 +31,9 @@ namespace DatabaseObjectClass
         public string AreaInChargeOf { get; set; }
         public string Role { get; set; }
 
-        public Staff() { }
+        public Staff() { }//Constructor added 12.19.2014
 
-        public Staff(Adult adult)
+        public Staff(Adult adult) //Constuctor to receive Adult objects,
         {
             this.AdultId = adult.AdultId;
             this.Title = adult.Title;

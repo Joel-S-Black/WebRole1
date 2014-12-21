@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebRole1.Content
+namespace DatabaseObjectClass
 {
     using System;
     using System.Collections.Generic;
@@ -21,8 +21,9 @@ namespace WebRole1.Content
         public string PreferredContactMethod3 { get; set; }
         public string PreferredContactMethod4 { get; set; }
         public string PreferredContactMethod5 { get; set; }
-    
+    /* Not needed. 12.20.2014
         public virtual Adults FK_Adult_Contact_Preference { get; set; }
         public virtual Children FK_Child_Contact_Preference { get; set; }
+     */
     }
 }
