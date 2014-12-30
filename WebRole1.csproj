@@ -11,7 +11,7 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebRole1</RootNamespace>
+    <RootNamespace>DatabaseObjectClass</RootNamespace>
     <AssemblyName>WebRole1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
@@ -164,8 +164,10 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="App_Code\Site1.Master" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\SiteStyle.css" />
     <Content Include="Content\SoulardDBModel.edmx.sql" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -222,8 +224,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Images\accent.png" />
+    <Content Include="Images\BrownAndBlackSoulardCross.bmp" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\MediumGreenAndBlackSoulardCross.bmp" />
     <Content Include="Images\orderedList0.png" />
     <Content Include="Images\orderedList1.png" />
     <Content Include="Images\orderedList2.png" />
@@ -238,23 +242,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
-    <EntityDeploy Include="Content\SoulardDBModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SoulardDBModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Content\SoulardDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SoulardDBModel.edmx</DependentUpon>
-      <LastGenOutput>SoulardDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Content\SoulardDBModel.edmx.diagram">
-      <DependentUpon>SoulardDBModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Content\SoulardDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SoulardDBModel.edmx</DependentUpon>
-      <LastGenOutput>SoulardDBModel.cs</LastGenOutput>
-    </Content>
+    <Content Include="MainsiteMaster.Master" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -297,6 +285,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\ContactInformationObject.cs" />
+    <Compile Include="App_Code\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MainsiteMaster.Master.cs">
+      <DependentUpon>MainsiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainsiteMaster.Master.designer.cs">
+      <DependentUpon>MainsiteMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -349,58 +352,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Content\Adults.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\Children.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\ContactInfo.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\ContactPreference.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\EmergencyContacts.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\IAdult.cs" />
-    <Compile Include="Content\Incidents.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\Memberships.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\NurseryClients.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\SoulardDBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SoulardDBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\SoulardDBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\SoulardDBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SoulardDBModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Content\SpiritualGifts.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\Staff.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\Values.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Content\VisitorContactTracking.cs">
-      <DependentUpon>SoulardDBModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="App_Code\Adult.cs" />
+    <Compile Include="App_Code\Child.cs" />
+    <Compile Include="App_Code\IAdult.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,7 +412,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>59054</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:51626/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

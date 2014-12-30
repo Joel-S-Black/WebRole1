@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebRole1.Account
+namespace DatabaseObjectClass.Account
 {
 
 

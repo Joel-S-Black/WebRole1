@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace DatabaseObjectClass
 {
-    interface IAdult:IDisposable
+    public interface IAdult:IDisposable
     {
-        public string Title { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
-        public string Suffix { get; set; }
-        public string Birthday { get; set; }
-        public string PhotoURL { get; set; }
-        public string Gender { get; set; }
+        string Title { get; set; }
+        string FirstName { get; set; }
+        string MiddleName { get; set; }
+        string LastName { get; set; }
+        string Suffix { get; set; }
+        DateTime Birthday { get; set; }
+        string PhotoURL { get; set; }
+        string Gender { get; set; }
 
 
     }

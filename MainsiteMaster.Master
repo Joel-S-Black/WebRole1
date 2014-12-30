@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainsiteMaster.master.cs" Inherits="DatabaseObjectClass.App_Code.MainsiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%: Page.Title %> - The Rock in Soulard</title>
+    <link href="../Content/SiteStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="Header" runat="server">
+      <div id="HeadGroup">
+            <asp:Image runat="server" ImageURL="~/Images/BrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>   
+            <div id="Title"><p>The Rock in Soulard</p></div>
+            <div id ="Subtitle"><p>The city campus of the Rock Church of Saint Louis</p></div>
+       </div> 
+    </asp:ContentPlaceHolder>
+    
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ChangeableContent" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <asp:ContentPlaceHolder ID="Footer" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

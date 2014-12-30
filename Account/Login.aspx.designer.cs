@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebRole1.Account
+namespace DatabaseObjectClass.Account
 {
 
 
@@ -30,6 +30,6 @@ namespace WebRole1.Account
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WebRole1.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::DatabaseObjectClass.Account.OpenAuthProviders OpenAuthLogin;
     }
 }

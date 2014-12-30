@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebRole1
+namespace DatabaseObjectClass
 {
 
 

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebRole1.Account
+namespace DatabaseObjectClass.Account
 {
     public partial class Login : Page
     {

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
-using WebRole1;
+using DatabaseObjectClass;
 
-namespace WebRole1
+namespace DatabaseObjectClass
 {
     public class Global : HttpApplication
     {

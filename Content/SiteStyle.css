@@ -1,0 +1,33 @@
+﻿body {
+
+}
+
+#HeadGroup {
+    background-color:#B97A57;
+    
+}
+#Title {
+    /*background-color:#B97A57;*/
+    position:absolute;
+    font-size:100px;
+    left:11%;
+    top: 1%;
+    
+        
+}
+
+#Subtitle {
+    font-size:24px;
+    left:30%;
+    top:5%;
+    margin:1%;
+    }
+
+#Logo {
+   position:absolute;
+   top:1%;
+   left:1%;
+   width:100%;
+   background-color:#B97A57;
+    
+}

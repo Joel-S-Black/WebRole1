@@ -795,8 +795,6 @@
           <NavigationProperty Name="Staffs1" Relationship="SoulardDBModel.AdultsStaff1" FromRole="Adults" ToRole="Staff" />
           <NavigationProperty Name="Incidents" Relationship="SoulardDBModel.AdultsIncidents" FromRole="Adults" ToRole="Incidents" />
           <NavigationProperty Name="VisitorIdContactTracking" Relationship="SoulardDBModel.FK_VisitorContactTrackingAdults" FromRole="Adults" ToRole="VisitorContactTracking" />
-          <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId" Nullable="false" />
-          <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId1" Nullable="false" />
           <NavigationProperty Name="EnteredByAdultId" Relationship="SoulardDBModel.FK_EnteredByAdultId" FromRole="Adults" ToRole="VisitorContactTracking" />
           <Property Type="Int32" Name="VisitorContactTrackingContactTrackingId2" Nullable="false" />
           <NavigationProperty Name="ContactedByAdultId" Relationship="SoulardDBModel.FK_ContactedByAdultId" FromRole="Adults" ToRole="VisitorContactTracking" />
@@ -1093,7 +1091,7 @@
               <PropertyRef Name="ContactTrackingId" />
             </Principal>
             <Dependent Role="Adults">
-              <PropertyRef Name="VisitorContactTrackingContactTrackingId" />
+              <PropertyRef Name="bgg" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

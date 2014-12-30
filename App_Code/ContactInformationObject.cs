@@ -8,7 +8,7 @@ namespace DatabaseObjectClass
     public class ContactInformationObject
     {
         public int ContactInfoID { get; set; }
-        public string ContactID { get; set; }
+        public int ContactId { get; set; }
         public string Title { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }

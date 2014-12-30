@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4f4ace027f674a4bb97a74f77dabf9d8" Name="Diagram1" ZoomLevel="112" >
+      <Diagram DiagramId="4f4ace027f674a4bb97a74f77dabf9d8" Name="Diagram1" ZoomLevel="74" >
         <EntityTypeShape EntityType="SoulardDBModel.NurseryClients" Width="1.75" PointX="0.5" PointY="6" />
         <EntityTypeShape EntityType="SoulardDBModel.Adults" Width="1.5" PointX="0.625" PointY="0.5" />
         <EntityTypeShape EntityType="SoulardDBModel.ContactInfo" Width="1.5" PointX="6" PointY="1.25" />

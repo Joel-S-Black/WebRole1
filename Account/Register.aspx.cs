@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Membership.OpenAuth;
 
-namespace WebRole1.Account
+namespace DatabaseObjectClass.Account
 {
     public partial class Register : Page
     {

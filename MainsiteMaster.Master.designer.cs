@@ -7,60 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseObjectClass.Account
-{
-
-
-    public partial class Manage
-    {
-
+namespace DatabaseObjectClass.App_Code {
+    
+    
+    public partial class MainsiteMaster {
+        
         /// <summary>
-        /// successMessage control.
+        /// Header control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
-
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Header;
+        
         /// <summary>
-        /// setPassword control.
+        /// Logo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder setPassword;
-
+        protected global::System.Web.UI.WebControls.Image Logo;
+        
         /// <summary>
-        /// password control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox password;
-
-
-
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
         /// <summary>
-        /// confirmPassword control.
+        /// ChangeableContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox confirmPassword;
-
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ChangeableContent;
+        
         /// <summary>
-        /// changePassword control.
+        /// Footer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder changePassword;
-
-
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder Footer;
     }
 }

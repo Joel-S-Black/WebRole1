@@ -18,6 +18,8 @@ namespace DatabaseObjectClass
         public string Gender { get; set; }
 
         public Adult() { }
+
+        public void Dispose() {}
     
     }
 }

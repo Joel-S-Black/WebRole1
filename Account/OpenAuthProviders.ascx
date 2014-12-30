@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpenAuthProviders.ascx.cs" Inherits="WebRole1.Account.OpenAuthProviders" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpenAuthProviders.ascx.cs" Inherits="DatabaseObjectClass.Account.OpenAuthProviders" %>
 
 <fieldset class="open-auth-providers">
     <legend>Log in using another service</legend>

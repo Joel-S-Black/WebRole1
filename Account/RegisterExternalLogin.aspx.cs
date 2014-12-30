@@ -4,7 +4,7 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.AspNet.Membership.OpenAuth;
 
-namespace WebRole1.Account
+namespace DatabaseObjectClass.Account
 {
     public partial class RegisterExternalLogin : System.Web.UI.Page
     {

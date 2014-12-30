@@ -7,38 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseObjectClass
-{
-
-
-    public partial class SiteMaster
-    {
-
+namespace DatabaseObjectClass.App_Code {
+    
+    
+    public partial class Site1 {
+        
         /// <summary>
-        /// HeadContent control.
+        /// HeaderContentPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
-
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeaderContentPlaceHolder;
+        
         /// <summary>
-        /// FeaturedContent control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder FeaturedContent;
-
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
         /// <summary>
-        /// MainContent control.
+        /// BodyContentPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder BodyContentPlaceHolder;
+        
+        /// <summary>
+        /// FooterContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder FooterContentPlaceHolder;
     }
 }
