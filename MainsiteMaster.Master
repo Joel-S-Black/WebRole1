@@ -5,26 +5,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title><%: Page.Title %> - The Rock in Soulard</title>
-    <link href="../Content/SiteStyle.css" rel="stylesheet" />
+    <%--<link href="../Content/SiteStyle.css" type="text/css" rel="stylesheet" />--%>
+    <link href="../Content/StickyFooter.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <asp:ContentPlaceHolder ID="Header" runat="server">
-      <div id="HeadGroup">
-            <asp:Image runat="server" ImageURL="~/Images/BrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>   
-            <div id="Title"><p>The Rock in Soulard</p></div>
-            <div id ="Subtitle"><p>The city campus of the Rock Church of Saint Louis</p></div>
-       </div> 
-    </asp:ContentPlaceHolder>
-    
-    <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ChangeableContent" runat="server">
-        
-        </asp:ContentPlaceHolder>
-    </div>
-        <asp:ContentPlaceHolder ID="Footer" runat="server">
+    <div id="wrapper"> <!--This div tag exists to force the footer to the bottom with CSS -->
+        <div id="PageTop">
+            <asp:ContentPlaceHolder ID="PageTopContent" runat="server">
+      
+                <asp:Image runat="server" ImageURL="~/Images/BrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>   
+                <span id="Title"><p>The Rock in Soulard</p></span>
+                <span id ="Subtitle"><p>The city campus of the Rock Church of Saint Louis</p></span>
+       
+            </asp:ContentPlaceHolder>
+        </div><!-- This is the end of the top of the page, the header so to speak -->
 
-        </asp:ContentPlaceHolder>
-    </form>
+            <div id="PageMiddle">
+                <form id="form1" runat="server">
+                    <asp:ContentPlaceHolder ID="ChangeableContent" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </form>
+            <div id="push"></div>
+        </div><!--This is the end of the the changeable content. The stuff that people really want to deal with goes above-->
+
+         <div id="PageBottom">
+            <asp:ContentPlaceHolder ID="PageBottomContent" runat="server">
+                <div id="BottomLeft"><p><h3>Contact Us</h3>
+                    Pastor Ken Robinson: 314-262-5459<br />
+                    Pastor Gary Collins: 314-518-8835</p>
+                </div><!--This marks the end of the bottom left of the footer-->
+                <div id="BottomCenter">
+                    <p><h3>Address</h3>
+                    2420 S 12th St<br />
+                St. Louis, MO 63104</p>
+                </div><!--This marks the end of the bottom center of the footer-->
+                <div id="BottomRight">
+                    <p><h3>Service Schedule</h3>
+                    Sunday: 10:45 am<br />
+                 Wednesday: 7:00 pm</p>
+                </div><!--This marks the end of the bottom right of the footer-->
+            </asp:ContentPlaceHolder><!--The end of the content place holder is here. In the future, relative data will be here.-->
+        </div>
+    </div>
 </body>
 </html>

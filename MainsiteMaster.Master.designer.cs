@@ -13,13 +13,13 @@ namespace DatabaseObjectClass.App_Code {
     public partial class MainsiteMaster {
         
         /// <summary>
-        /// Header control.
+        /// PageTopContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Header;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageTopContent;
         
         /// <summary>
         /// Logo control.
@@ -49,12 +49,12 @@ namespace DatabaseObjectClass.App_Code {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ChangeableContent;
         
         /// <summary>
-        /// Footer control.
+        /// PageBottomContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder Footer;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageBottomContent;
     }
 }
