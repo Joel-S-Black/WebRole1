@@ -6,7 +6,7 @@
 <head runat="server">
     <title><%: Page.Title %> - The Rock in Soulard</title>
     <%--<link href="../Content/SiteStyle.css" type="text/css" rel="stylesheet" />--%>
-    <link href="../Content/StickyFooter.css" type="text/css" rel="stylesheet" />
+    <link href="../Content/SiteStyle.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper"> <!--This div tag exists to force the footer to the bottom with CSS -->
