@@ -26,8 +26,9 @@
         
                     </asp:ContentPlaceHolder>
                 </form>
-            <div id="push"></div>
-        </div><!--This is the end of the the changeable content. The stuff that people really want to deal with goes above-->
+    <!--        <div id="push"></div>
+        </div><!--This is the end of the the changeable content. The stuff that people really want to deal with goes above 
+    -->
 
          <div id="PageBottom">
             <asp:ContentPlaceHolder ID="PageBottomContent" runat="server">
