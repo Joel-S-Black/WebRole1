@@ -16,7 +16,7 @@ html,body {
 
 #PageTop {
     background-color:#B97A57;
-    height:30%;
+    height:200px;
 }
 
 #Title {
@@ -39,7 +39,7 @@ html,body {
 
 #PageMiddle {
     padding:10px;
-    background-color:#E0D6CC;
+    background-color:#F5EFCF;
 }
 
 #push {
@@ -54,6 +54,7 @@ html,body {
     bottom:0;
     left:0;
     background-color:#B97A57;
+    font-family:Verdana;
 }
 
 /*BottomLeft is the left side of the footer, holding the church's people to contact */
