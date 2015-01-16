@@ -1,9 +1,9 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="DatabaseObjectClass.About" %>
+﻿<%@ Page Title="About Us" Language="C#" MasterPageFile="~/MainsiteMaster.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="DatabaseObjectClass.About" %>
 
-<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="ChangeableContent">
     <hgroup class="title">
-        <h1><%: Title %>.</h1>
-        <h2>Your app description page.</h2>
+        <h1>About the Rock in Soulard</h1>
+        
     </hgroup>
 
     <article>
@@ -26,9 +26,9 @@
             Use this area to provide additional information.
         </p>
         <ul>
-            <li><a runat="server" href="~/">Home</a></li>
-            <li><a runat="server" href="~/About">About</a></li>
-            <li><a runat="server" href="~/Contact">Contact</a></li>
+            <li><a runat="server" href="~/Default.aspx">Home</a></li>
+            <li><a runat="server" href="~/About.aspx">About</a></li>
+            <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
         </ul>
     </aside>
 </asp:Content>
