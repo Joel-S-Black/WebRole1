@@ -17,13 +17,6 @@
     </section>
 </asp:Content>--%>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="ChangeableContent">
-    <h3>We suggest the following:</h3>
-    <ol class="round">
-        <li class="one">
-            <h5>Getting Started</h5>
-            ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            <a href="http://go.microsoft.com/fwlink/?LinkId=245146">Learn more…</a>
-        </li>
-    </ol>
+    <h1>Welcome to the Rock in Soulard Website!</h1>
+    <p>This site is currently under construction. To contact us, click the links below.</p>
 </asp:Content>

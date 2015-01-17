@@ -1,8 +1,8 @@
-﻿/*
-    The footer was based on this webpage:
-    http://www.cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/
+﻿
+/*
+    The Below CSS is primarily for the Site Master. Everything else is
+    in the content placeholder section.
 */
-
 html,body {
    margin:0;
    padding:0;
@@ -47,6 +47,10 @@ html,body {
 
     height:11rem;
 }
+/*
+    The footer was based on this webpage:
+    http://www.cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/
+*/
 /*Everything in the viewable footer is  below. PageBottom is the container */
 #PageBottom {
     width:100%;
@@ -93,3 +97,4 @@ html,body {
     border-left:thin solid black;
 
 }
+/*This ends the Markup for the Master and content pages*/

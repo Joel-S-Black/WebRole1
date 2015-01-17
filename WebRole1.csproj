@@ -160,6 +160,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Code\Site1.Master" />
+    <Content Include="App_Data\SoulardTestDB.sql" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\SiteStyle.css" />
@@ -221,6 +222,7 @@
     <Content Include="Images\accent.png" />
     <Content Include="Images\BrownAndBlackSoulardCross.bmp" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\F5EFCF\Picture1.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\MediumGreenAndBlackSoulardCross.bmp" />
     <Content Include="Images\orderedList0.png" />
@@ -238,6 +240,16 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="MainsiteMaster.Master" />
+    <Content Include="Images\F5EFCF\Add Button.xcf" />
+    <Content Include="Images\F5EFCF\addAdultButton.xcf" />
+    <Content Include="Images\F5EFCF\addChildButton.xcf" />
+    <Content Include="Images\F5EFCF\Basic Button.xcf" />
+    <Content Include="Images\F5EFCF\BirthdayCake.xcf" />
+    <Content Include="Images\F5EFCF\birthdaysButton.xcf" />
+    <Content Include="Images\F5EFCF\editPersonButton.xcf" />
+    <Content Include="Images\F5EFCF\findPersonButton.xcf" />
+    <Content Include="Images\F5EFCF\reportsAndListButton.xcf" />
+    <Content Include="Images\F5EFCF\SmallBirthdayCake.xcf" />
     <None Include="Properties\PublishProfiles\Soulard.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -350,9 +362,7 @@
     </Compile>
     <Compile Include="WebRole.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Site.Master" />
   </ItemGroup>
