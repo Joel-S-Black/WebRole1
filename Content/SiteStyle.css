@@ -21,17 +21,17 @@ html,body {
 }
 
 #Title {
-    position:relative;
-    font-size:7rem;
-    right:-12rem;
-    top:-21rem;  
+    position:absolute;
+    font-size:700%;
+    top:-15%;
+    left:20%;
 }
     
 #Subtitle {
-    position:relative;
-    font-size:2rem;
-    bottom:28rem;
-    right:-30rem;       
+    position:absolute;
+    font-size:200%;
+    top:15%;
+    left:40%;       
 }
 
 #Logo {
@@ -41,6 +41,12 @@ html,body {
 #PageMiddle {
     padding:10px;
     background-color:#F5EFCF;
+    /*the next few lines make sure the page can be 
+        read by cell phones and tablets 01/17/2015
+    */
+    max-width:70%;
+   padding-left:15%;
+   padding-right:15%;
 }
 
 #push {
