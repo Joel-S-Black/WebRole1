@@ -38,16 +38,7 @@ html,body {
    
 }
 
-#PageMiddle {
-    padding:10px;
-    background-color:#F5EFCF;
-    /*the next few lines make sure the page can be 
-        read by cell phones and tablets 01/17/2015
-    */
-    max-width:70%;
-   padding-left:15%;
-   padding-right:15%;
-}
+
 
 #push {
 
@@ -69,6 +60,9 @@ html,body {
 }
 
 /*BottomLeft is the left side of the footer, holding the church's people to contact */
+/*Bottom Left is changed to hold the Contact Us Link and the About Us links.
+    The height in 100px was added to make sure the bar looked like one piece - 01.17.2015
+*/
 #BottomLeft {
     position:absolute;
     left:0%;
@@ -77,6 +71,7 @@ html,body {
     bottom:0;
     text-align:center;
     border-top:thin solid black;
+    height:100px;
 }
 
 /*BottomCenter is the middle of the footer, holding the church's address */
@@ -89,6 +84,7 @@ html,body {
     border-left:thin solid black;
     border-top:thin solid black;
     text-align:center;
+    height:100px;
 }
 
 /*BottomRight is the right third of the footer, holding the service schedule*/
@@ -101,6 +97,35 @@ html,body {
     text-align:center;
     border-top:thin solid black;
     border-left:thin solid black;
-
+    height:100px;
 }
-/*This ends the Markup for the Master and content pages*/
+
+/*These are the styles for the hyperlinks
+    #0645AD
+    -01.17.2015. B
+*/
+a.master{
+    color:#0645AD;
+}
+a.master:hover {
+    color:#CC2200;
+}
+
+a.master:visited {
+    color:#0645AD;
+}
+/*This ends the Markup for the Master pages */
+
+/*This begins the styling for the content pages*/
+#PageMiddle {
+    padding:10px;
+    background-color:#F5EFCF;
+    /*the next few lines make sure the page can be 
+        read by cell phones and tablets 01/17/2015
+    */
+    max-width:70%;
+   padding-left:15%;
+   padding-right:15%;
+}
+
+/*This ends the styling for the content pages 01.17.2015*/

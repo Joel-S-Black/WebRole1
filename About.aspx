@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About Us" Language="C#" MasterPageFile="~/MainsiteMaster.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="DatabaseObjectClass.About" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="ChangeableContent">
-  <%-- %>  <hgroup class="title">
+    <%-- %>  <hgroup class="title">
         <h1>About the Rock in Soulard</h1>
         
     </hgroup> This section was taking up valuable space 01.17.2015 --%>

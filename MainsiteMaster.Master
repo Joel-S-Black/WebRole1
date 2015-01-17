@@ -32,9 +32,9 @@
 
          <div id="PageBottom">
             <asp:ContentPlaceHolder ID="PageBottomContent" runat="server">
-                <div id="BottomLeft"><p><a runat="server" href="~/Contact.aspx"><h3>Contact Us</h3></a>
-                    Pastor Ken Robinson: 314-262-5459<br />
-                    Pastor Gary Collins: 314-518-8835</p>
+                <div id="BottomLeft">
+                    <p><a runat="server" href="~/Contact.aspx" class="master"><h3>Contact Us</h3></a></p>
+                    <p><a runat="server" href="~/About.aspx" class="master"><h3>About the Rock</h3></a></p>
                 </div><!--This marks the end of the bottom left of the footer-->
                 <div id="BottomCenter">
                     <p><h3>Address</h3>
