@@ -12,10 +12,12 @@
     <div id="wrapper"> <!--This div tag exists to force the footer to the bottom with CSS -->
         <div id="PageTop">
             <asp:ContentPlaceHolder ID="PageTopContent" runat="server">
-      
-                <asp:Image runat="server" ImageURL="~/Images/BrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>   
+                <asp:Image runat="server" ImageURL="~/Images/BannerBrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>  
+      <%-- Replaced the below to put in a banner image that will work for smaller screens (01/18/2015)
+                 
                 <span id="Title"><p>The Rock in Soulard</p></span>
                 <span id ="Subtitle"><p>The city campus of the Rock Church of Saint Louis</p></span>
+          --%>
        
             </asp:ContentPlaceHolder>
         </div><!-- This is the end of the top of the page, the header so to speak -->
