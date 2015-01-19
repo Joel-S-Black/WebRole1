@@ -100,19 +100,19 @@ html,body {
     height:100px;
 }
 
-/*These are the styles for the hyperlinks
-    #0645AD
-    -01.17.2015. B
+/*These are the styles for the hyperlinks in the master page
+    
+    -01.17.2015. 
 */
 a.master{
-    color:#0645AD;
+    color:#0645AD; /* Blue */
 }
 a.master:hover {
-    color:#CC2200;
+    color:#CC2200; /* Red */
 }
 
 a.master:visited {
-    color:#0645AD;
+    color:#0645AD; /* Blue*/
 }
 /*This ends the Markup for the Master pages */
 
@@ -120,12 +120,33 @@ a.master:visited {
 #PageMiddle {
     padding:10px;
     background-color:#F5EFCF;
+    
+}
+
+.mobilereadable {
     /*the next few lines make sure the page can be 
-        read by cell phones and tablets 01/17/2015
+        read by cell phones and tablets 01/19/2015
     */
+    
     max-width:70%;
    padding-left:15%;
    padding-right:15%;
 }
 
-/*This ends the styling for the content pages 01.17.2015*/
+.imagebutton {
+    /*
+        Need to add the webkit animations for grow and wiggle (01.19.2015)
+    */
+    max-width:20%;
+    Max-height:20%;
+    padding:1.5%;
+}
+
+.centeredcontent {
+    
+    padding-left:16%;
+    padding-right:16%;
+    
+}
+
+/*This ends the styling for the content pages 01.19.2015*/
