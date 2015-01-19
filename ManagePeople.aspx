@@ -5,10 +5,22 @@
     --%>
 <asp:Content ID="ManagePeople" ContentPlaceHolderID="ChangeableContent" runat="server">
     <div id="ImageButtonWrapper" class="centeredcontent">
-        <asp:ImageButton ID="btnAddAdult" runat="server" AlternateText="Click here to add an adult to the database" CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/addAdultButton.png"  />
-        <asp:ImageButton ID="btnAddChild" runat="server" AlternateText="Click here to add a child to the database" CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/addChildButton.png" />
-        <asp:ImageButton ID="btnFindPerson" runat="server" AlternateText="Click here to find a person in the database" CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/findPersonButton.png" />
-        <asp:ImageButton ID="btnEditPerson" runat="server" AlternateText="Click here to edit a person in the database" CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/editPersonButton.png" />
+        <asp:ImageButton ID="btnAddAdult" runat="server" 
+            AlternateText="Click here to add an adult to the database" 
+            CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/addAdultButton.png"  />
+        <asp:ImageButton ID="btnAddChild" runat="server" 
+            AlternateText="Click here to add a child to the database" 
+            CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/addChildButton.png" />
+        <asp:ImageButton ID="btnFindPerson" runat="server" 
+            AlternateText="Click here to find a person in the database" 
+            CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/findPersonButton.png" />
+        <asp:ImageButton ID="btnEditPerson" runat="server" 
+            AlternateText="Click here to edit a person in the database" 
+            CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/editPersonButton.png" />
+
+         <p>
+            This site is currently under construction. To contact us, click the links below.
+        </p>
     </div>
 <%-- Not needed now (01.19.2015)
     <asp:ImageButton ID="ImageButton1" runat="server" />

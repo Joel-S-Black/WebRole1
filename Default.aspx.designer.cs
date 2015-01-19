@@ -7,11 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DatabaseObjectClass
-{
-
-
-    public partial class _Default
-    {
+namespace DatabaseObjectClass {
+    
+    
+    public partial class _Default {
+        
+        /// <summary>
+        /// btnManagePeople control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnManagePeople;
     }
 }

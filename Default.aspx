@@ -23,19 +23,19 @@
 
         </h1>
 
-        <p>
-            This site is currently under construction. To contact us, click the links below.
-
-        </p>
-
-        <%--  
+         
             <asp:ImageButton ID="btnManagePeople" runat="server" 
                 AlternateText="Click here to manage people in the database" 
                 CssClass="imagebutton" ImageUrl="~/Images/F5EFCF/managePeopleButton.png"  
                 PostBackURL="ManagePeople.aspx" />
-
+        <%-- 
             This button added 01.19.2015. It is commented out until the below page has places to go.
             --%>
+
+        <p>
+            This site is currently under construction. To contact us, click the links below.
+
+        </p>
 
     </div>
 </asp:Content>
