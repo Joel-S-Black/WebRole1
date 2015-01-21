@@ -12,13 +12,13 @@
     <div id="wrapper"> <!--This div tag exists to force the footer to the bottom with CSS -->
         <div id="PageTop">
             <asp:ContentPlaceHolder ID="PageTopContent" runat="server">
-                <asp:Image runat="server" ImageURL="~/Images/BannerBrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>  
+                
       <%-- Replaced the below to put in a banner image that will work for smaller screens (01/18/2015)
                  
                 <span id="Title"><p>The Rock in Soulard</p></span>
                 <span id ="Subtitle"><p>The city campus of the Rock Church of Saint Louis</p></span>
           --%>
-       
+       <asp:Image runat="server" ImageURL="~/Images/BannerBrownAndBlackSoulardCross.bmp" ID="Logo"></asp:Image>  
             </asp:ContentPlaceHolder>
         </div><!-- This is the end of the top of the page, the header so to speak -->
 
@@ -35,8 +35,9 @@
          <div id="PageBottom">
             <asp:ContentPlaceHolder ID="PageBottomContent" runat="server">
                 <div id="BottomLeft">
-                    <p><a runat="server" href="~/Contact.aspx" class="master"><h3>Contact Us</h3></a></p>
-                    <p><a runat="server" href="~/About.aspx" class="master"><h3>About the Rock</h3></a></p>
+                    <p><a runat="server" href="~/Default.aspx" class="master">Home</a></p>
+                    <p><a runat="server" href="~/Contact.aspx" class="master">Contact Us</a></p>
+                    <p><a runat="server" href="~/About.aspx" class="master">About the Rock</a></p>
                 </div><!--This marks the end of the bottom left of the footer-->
                 <div id="BottomCenter">
                     <p><h3>Address</h3>

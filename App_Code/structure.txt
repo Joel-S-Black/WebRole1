@@ -1,0 +1,15 @@
+Manage People
+	Add Child
+		Child.edmx
+		stored proc get males
+		stored proc get female
+	Add Adult
+		Adult.edmx
+	Edit Person
+		Child.edmx
+	Find Person
+		Child.edmx
+
+Reports
+Birthdays
+

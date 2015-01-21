@@ -142,6 +142,8 @@ CREATE TABLE [dbo].[SpiritualGifts] (
     [GiftComment8] nvarchar(max)
 );
 GO
+
+/* This table (Values) is eliminated 01.21.2015. Each value set will have their own table.
 --The values Table will hold the drop down menu options, such as phone types of cellphone, work, neighbor's house, home, etc.
 -- Creating table 'Values'
 --The below table was optimized (12.11.2014)
@@ -157,6 +159,8 @@ CREATE TABLE [dbo].[Values] (
 	--MethodOfContact was added 12.17.2014.
 	--The non-identity fields were all converted to not required 12.17.2014
 );
+
+*/
 GO
 --The below table was optimized (12.11.2014)
 -- Creating table 'EmergencyContacts'
@@ -275,13 +279,13 @@ ALTER TABLE [dbo].[SpiritualGifts]
 ADD CONSTRAINT [PK_SpiritualGifts]
     PRIMARY KEY CLUSTERED ([SpiritualGiftListingsId] ASC);
 GO
-
+/* This primary key was eliminated 01.21.2015. Each value will have it's own table.
 -- Creating primary key on [Id] in table 'Values'
 ALTER TABLE [dbo].[Values]
 ADD CONSTRAINT [PK_Values]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
-
+*/
 -- Creating primary key on [Id] in table 'EmergencyContacts'
 ALTER TABLE [dbo].[EmergencyContacts]
 ADD CONSTRAINT [PK_EmergencyContacts]
@@ -709,6 +713,36 @@ ON [dbo].[AdultsIncidents6]
     ([Incidents6_IncidentID]);
 GO
 */
+
+/* ***********************************************
+
+STORED PROCEDURES
+
+**************************************************
+*/
+
+CREATE PROCEDURE RetrieveMales
+AS
+BEGIN
+SELECT FirstName, Left(MiddleName,1) as MiddleInitial,LastName
+FROM Adults
+WHERE Gender = 'Male'
+END
+
+GO
+-- The above procedure is for drop down lists, added 01.21.2015. 
+-- It pulls all the male adult names with middle initials
+
+CREATE PROCEDURE RetrieveFemales
+AS
+BEGIN
+SELECT FirstName, Left(MiddleName,1) as MiddleInitial, LastName
+FROM Adults
+WHERE Gender = 'Female'
+END
+GO
+-- The above procedure is for drop down lists, added 01.21.2015. 
+-- It pulls all of the female adult names with middle initials
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------

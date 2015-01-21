@@ -160,6 +160,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="App_Code\Site1.Master" />
+    <Content Include="App_Code\structure.txt" />
+    <Content Include="App_Data\NewTablesNViews01212015.sql" />
     <Content Include="App_Data\SoulardTestDB.sql" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\SiteStyle.css" />
@@ -258,6 +260,23 @@
     <Content Include="Images\F5EFCF\reportsAndListButton.xcf" />
     <Content Include="Images\F5EFCF\SmallBirthdayCake.xcf" />
     <Content Include="ManagePeople.aspx" />
+    <EntityDeploy Include="AddAdult.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AddAdult.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="AddAdult.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AddAdult.edmx</DependentUpon>
+      <LastGenOutput>AddAdult.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="AddAdult.edmx.diagram">
+      <DependentUpon>AddAdult.edmx</DependentUpon>
+    </Content>
+    <Content Include="AddAdult.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AddAdult.edmx</DependentUpon>
+      <LastGenOutput>AddAdult.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\Soulard.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -301,7 +320,24 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\ContactInformationObject.cs" />
+    <Compile Include="AddAdult.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddAdult.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddAdult.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddAdult.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AddAdult.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddAdult.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Adult.cs">
+      <DependentUpon>AddAdult.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Code\Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -333,9 +369,6 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\Adult.cs" />
-    <Compile Include="App_Code\Child.cs" />
-    <Compile Include="App_Code\IAdult.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

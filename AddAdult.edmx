@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SoulardTestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adults">
+          <Key>
+            <PropertyRef Name="AdultId" />
+          </Key>
+          <Property Name="AdultId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="25" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Suffix" Type="nvarchar" MaxLength="7" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="PhotoURL" Type="nvarchar(max)" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContactInfo">
+          <Key>
+            <PropertyRef Name="ContactInfoID" />
+          </Key>
+          <Property Name="ContactInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="PhoneNumber1" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneNumber1Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="PhoneNumber2" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneNumber2Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="PhoneNumber3" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneNumber3Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email1" Type="nvarchar(max)" />
+          <Property Name="Email1Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email2" Type="nvarchar(max)" />
+          <Property Name="Email2Type" Type="nvarchar" MaxLength="10" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="MailingAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="MailingCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="MailingState" Type="nvarchar" MaxLength="11" />
+          <Property Name="MailingZip" Type="nvarchar" MaxLength="11" />
+          <Property Name="FacebookName" Type="nvarchar(max)" />
+          <Property Name="TwitterHandle" Type="nvarchar(max)" />
+          <Property Name="InstagramName" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_AdultsContactInfo">
+          <End Role="Adults" Type="Self.Adults" Multiplicity="1" />
+          <End Role="ContactInfo" Type="Self.ContactInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adults">
+              <PropertyRef Name="AdultId" />
+            </Principal>
+            <Dependent Role="ContactInfo">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SoulardTestDBModelStoreContainer">
+          <EntitySet Name="Adults" EntityType="Self.Adults" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactInfo" EntityType="Self.ContactInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AdultsContactInfo" Association="Self.FK_AdultsContactInfo">
+            <End Role="Adults" EntitySet="Adults" />
+            <End Role="ContactInfo" EntitySet="ContactInfo" />
+          </AssociationSet>
+          </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SoulardTestDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Adult">
+          <Key>
+            <PropertyRef Name="AdultId" />
+          </Key>
+          <Property Name="AdultId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Suffix" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PhotoURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ContactInfoes" Relationship="SoulardTestDBModel.FK_AdultsContactInfo" FromRole="Adult" ToRole="ContactInfo" />
+          </EntityType>
+        <EntityContainer Name="SoulardTestDBConn" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Adults" EntityType="Self.Adult" />
+          <EntitySet Name="ContactInfoes" EntityType="SoulardTestDBModel.ContactInfo" />
+          <AssociationSet Name="FK_AdultsContactInfo" Association="SoulardTestDBModel.FK_AdultsContactInfo">
+            <End Role="Adult" EntitySet="Adults" />
+            <End Role="ContactInfo" EntitySet="ContactInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ContactInfo">
+          <Key>
+            <PropertyRef Name="ContactInfoID" />
+          </Key>
+          <Property Name="ContactInfoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNumber1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber1Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber2Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber3Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email1Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email2Type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="MailingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MailingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MailingState" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="MailingZip" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="FacebookName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TwitterHandle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InstagramName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Adult" Relationship="SoulardTestDBModel.FK_AdultsContactInfo" FromRole="ContactInfo" ToRole="Adult" />
+        </EntityType>
+        <Association Name="FK_AdultsContactInfo">
+          <End Type="SoulardTestDBModel.Adult" Role="Adult" Multiplicity="1" />
+          <End Type="SoulardTestDBModel.ContactInfo" Role="ContactInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Adult">
+              <PropertyRef Name="AdultId" />
+            </Principal>
+            <Dependent Role="ContactInfo">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SoulardTestDBModelStoreContainer" CdmEntityContainer="SoulardTestDBConn">
+          <EntitySetMapping Name="Adults">
+            <EntityTypeMapping TypeName="SoulardTestDBModel.Adult">
+              <MappingFragment StoreEntitySet="Adults">
+                <ScalarProperty Name="AdultId" ColumnName="AdultId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="PhotoURL" ColumnName="PhotoURL" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactInfoes">
+            <EntityTypeMapping TypeName="SoulardTestDBModel.ContactInfo">
+              <MappingFragment StoreEntitySet="ContactInfo">
+                <ScalarProperty Name="InstagramName" ColumnName="InstagramName" />
+                <ScalarProperty Name="TwitterHandle" ColumnName="TwitterHandle" />
+                <ScalarProperty Name="FacebookName" ColumnName="FacebookName" />
+                <ScalarProperty Name="MailingZip" ColumnName="MailingZip" />
+                <ScalarProperty Name="MailingState" ColumnName="MailingState" />
+                <ScalarProperty Name="MailingCity" ColumnName="MailingCity" />
+                <ScalarProperty Name="MailingAddress" ColumnName="MailingAddress" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email2Type" ColumnName="Email2Type" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Email1Type" ColumnName="Email1Type" />
+                <ScalarProperty Name="Email1" ColumnName="Email1" />
+                <ScalarProperty Name="PhoneNumber3Type" ColumnName="PhoneNumber3Type" />
+                <ScalarProperty Name="PhoneNumber3" ColumnName="PhoneNumber3" />
+                <ScalarProperty Name="PhoneNumber2Type" ColumnName="PhoneNumber2Type" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="PhoneNumber1Type" ColumnName="PhoneNumber1Type" />
+                <ScalarProperty Name="PhoneNumber1" ColumnName="PhoneNumber1" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="ContactInfoID" ColumnName="ContactInfoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
