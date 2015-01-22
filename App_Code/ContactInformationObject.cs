@@ -5,11 +5,6 @@ using System.Web;
 
 namespace DatabaseObjectClass
 {
-    /* 
-         * the compiler had a fit because there are entity classes saying the same thing, 
-         * so I'm excluding these classes from the project. Originally, when I commented
-         * out the class code, compile errors abounded.
-     */
     public class ContactInformationObject
     {
         public int ContactInfoID { get; set; }
@@ -44,18 +39,7 @@ namespace DatabaseObjectClass
 
         public ContactInformationObject() { }
 
-        public ContactInformationObject(Adult adult) 
-        {
-            this.ContactId = adult.AdultId;
-            this.Title = adult.Title;
-            this.FirstName = adult.FirstName;
-            this.MiddleName = adult.MiddleName;
-            this.LastName = adult.LastName;
-            this.Suffix = adult.Suffix;
-            this.PhotoURL = adult.PhotoURL;
-
-            adult.Dispose();
-        }
+       
     
     }
 }
