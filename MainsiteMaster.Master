@@ -35,9 +35,9 @@
          <div id="PageBottom">
             <asp:ContentPlaceHolder ID="PageBottomContent" runat="server">
                 <div id="BottomLeft">
-                    <p><a runat="server" href="~/Default.aspx" class="master">Home</a></p>
-                    <p><a runat="server" href="~/Contact.aspx" class="master">Contact Us</a></p>
-                    <p><a runat="server" href="~/About.aspx" class="master">About the Rock</a></p>
+                    <p><a runat="server" href="~/Default.aspx" class="master"><b>Home</b></a><br />
+                    <a runat="server" href="~/Contact.aspx" class="master"><b>Contact Us</b></a><br />
+                    <a runat="server" href="~/About.aspx" class="master"><b>About the Rock</b></a></p>
                 </div><!--This marks the end of the bottom left of the footer-->
                 <div id="BottomCenter">
                     <p><h3>Address</h3>

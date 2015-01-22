@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace DatabaseObjectClass
 {
+    /* 
+         * the compiler had a fit because there are entity classes saying the same thing, 
+         * so I'm excluding these classes from the project. Originally, when I commented
+         * out the class code, compile errors abounded.
+     */
     public interface IAdult:IDisposable
     {
         string Title { get; set; }

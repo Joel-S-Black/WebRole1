@@ -111,13 +111,18 @@ html,body {
 */
 a.master{
     color:#0645AD; /* Blue */
+    font-size:1.2em;
+    
+    
 }
 a.master:hover {
     color:#CC2200; /* Red */
+    font-size:1.2em;
 }
 
 a.master:visited {
     color:#0645AD; /* Blue*/
+    font-size:1.2em;
 }
 /*This ends the Markup for the Master pages */
 
