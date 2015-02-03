@@ -33,6 +33,8 @@ INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Staff');
 INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Manager');
 INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Admin');
 INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Pastor');
+
+--Create View Here 02.01.2015
 GO
 
 --Create a table to choose the values for phone types from a drop down. Added 01.31.2015
@@ -53,6 +55,7 @@ INSERT INTO [PhoneTypes] (PhoneType) Values ('Fax');
 INSERT INTO [PhoneTypes] (PhoneType) Values ('School');
 INSERT INTO [PhoneTypes] (PhoneType) Values ('Friend');
 INSERT INTO [PhoneTypes] (PhoneType) Values ('Neighbor');
+--Create View Here 02.01.2015
 GO
 
 --Create a table to choose values from dropdown list of Email types. Added 01.31.2015
@@ -70,6 +73,7 @@ INSERT INTO [EmailTypes] (EmailType) Values ('Home');
 INSERT INTO [EmailTypes] (EmailType) Values ('Work');
 INSERT INTO [EmailTypes] (EmailType) Values ('School');
 INSERT INTO [EmailTypes] (EmailType) Values ('Secondary');
+--Create View Here 02.01.2015
 GO
 
 --Create a table to choose values from dropdown list of title types. Added 01.31.2015
@@ -89,6 +93,7 @@ INSERT INTO [Titles] (TitleType) Values ('Mrs.');
 INSERT INTO [Titles] (TitleType) Values ('Miss');
 INSERT INTO [Titles] (TitleType) Values ('Pastor');
 INSERT INTO [Titles] (TitleType) Values ('Reverend');
+--Create View Here 02.01.2015
 GO
 --Create a table to choose values from dropdown list of suffix types. Added 01.31.2015
 CREATE TABLE [dbo].[Suffixes]
@@ -108,6 +113,7 @@ INSERT INTO [Suffixes] (SuffixType) Values ('IV');
 INSERT INTO [Suffixes] (SuffixType) Values ('V');
 INSERT INTO [Suffixes] (SuffixType) Values ('VI');
 INSERT INTO [Suffixes] (SuffixType) Values ('VII');
+--Create View Here 02.01.2015
 GO
 	
 	

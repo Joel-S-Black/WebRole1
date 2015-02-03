@@ -4,6 +4,7 @@ Manage People
 		stored proc get males
 		stored proc get female
 	Add Adult
+		 on the add adults table, offer a lives with lookup option
 		Adult.edmx
 	Edit Person
 		Child.edmx
@@ -12,4 +13,6 @@ Manage People
 
 Reports
 Birthdays
+
+
 

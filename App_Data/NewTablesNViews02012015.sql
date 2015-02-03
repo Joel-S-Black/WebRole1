@@ -33,6 +33,8 @@ INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Staff');
 INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Manager');
 INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Admin');
 INSERT INTO [ValuesAccessLevel] (AccessLevel) Values ('Pastor');
+
+--Create View Here 02.01.2015
 GO
 
 --Create a table to choose the values for phone types from a drop down. Added 01.31.2015
@@ -53,6 +55,7 @@ INSERT INTO [PhoneTypes] (PhoneType) Values ('Fax');
 INSERT INTO [PhoneTypes] (PhoneType) Values ('School');
 INSERT INTO [PhoneTypes] (PhoneType) Values ('Friend');
 INSERT INTO [PhoneTypes] (PhoneType) Values ('Neighbor');
+--Create View Here 02.01.2015
 GO
 
 --Create a table to choose values from dropdown list of Email types. Added 01.31.2015
@@ -70,6 +73,7 @@ INSERT INTO [EmailTypes] (EmailType) Values ('Home');
 INSERT INTO [EmailTypes] (EmailType) Values ('Work');
 INSERT INTO [EmailTypes] (EmailType) Values ('School');
 INSERT INTO [EmailTypes] (EmailType) Values ('Secondary');
+--Create View Here 02.01.2015
 GO
 
 --Create a table to choose values from dropdown list of title types. Added 01.31.2015
@@ -89,6 +93,7 @@ INSERT INTO [Titles] (TitleType) Values ('Mrs.');
 INSERT INTO [Titles] (TitleType) Values ('Miss');
 INSERT INTO [Titles] (TitleType) Values ('Pastor');
 INSERT INTO [Titles] (TitleType) Values ('Reverend');
+--Create View Here 02.01.2015
 GO
 --Create a table to choose values from dropdown list of suffix types. Added 01.31.2015
 CREATE TABLE [dbo].[Suffixes]
@@ -108,8 +113,79 @@ INSERT INTO [Suffixes] (SuffixType) Values ('IV');
 INSERT INTO [Suffixes] (SuffixType) Values ('V');
 INSERT INTO [Suffixes] (SuffixType) Values ('VI');
 INSERT INTO [Suffixes] (SuffixType) Values ('VII');
+--Create View Here 02.01.2015
 GO
 	
+--Create a table to choose values from dropdown list of method of contact for visitor contact tracking. Added 02.01.2015
+CREATE TABLE [dbo].[MethodsOfContact]
+	(
+	[MethodID] int IDENTITY(1,1) NOT NULL,
+	[MethodOfContact] nvarchar(30)
+	);
+
+ALTER TABLE [dbo].[MethodsOfContact]
+ADD CONSTRAINT [PK_MethodID]
+    PRIMARY KEY CLUSTERED ([MethodID] ASC);
+--these values will be used from a listbox, hence their high level of description
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('on their cell phone');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('on their home phone');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('on their work phone');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('by mail to their home');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('by mail to their job');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('in person, at their home');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('in person, at their job');
+INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('in person, neutral location');
+
+--Create View Here 02.01.2015
+GO
 	
-	[MethodOfContact] nvarchar(15)--This is the what the values in VisitContactTracking are based on.
-	[Gender] nvarchar(6);
+--Create a table to choose values from dropdown list of male and female. Added 02.01.2015
+CREATE TABLE [dbo].[Genders]
+	(
+	[GenderID] int IDENTITY(1,1) NOT NULL,
+	[Gender] nvarchar(6)
+	);
+
+ALTER TABLE [dbo].[Genders]
+ADD CONSTRAINT [PK_GenderID]
+    PRIMARY KEY CLUSTERED ([GenderID] ASC);
+
+INSERT INTO [Genders] (Gender) Values ('Female');
+INSERT INTO [Genders] (Gender) Values ('Male');
+--Create View Here 02.01.2015
+GO	
+--This is the new Addresses Table, put in for normalization. 02.01.2015
+CREATE TABLE [dbo].[Addresses] (
+	[AddressID] int IDENTITY (1,1) NOT NULL,
+    [Address] nvarchar(50),
+    [City] nvarchar(50),
+    [State] nvarchar(20),
+    [Zip] nvarchar(11)
+	);
+
+ALTER TABLE [dbo].[Addresses]
+ADD CONSTRAINT [PK_AddressID]
+    PRIMARY KEY CLUSTERED ([AddressID] ASC);
+
+--This is the new Mailing Addresses Table, put in for normalization, 02.02.2015
+CREATE TABLE [dbo].[MailingAddresses] (
+	[MailingAddressID] int IDENTITY (1,1) NOT NULL,
+    [MailingAddress] nvarchar(50),
+    [MailingCity] nvarchar(50),
+    [MailingState] nvarchar(11),
+    [MailingZip] nvarchar(11)
+    
+);
+
+ALTER TABLE [dbo].[MailingAddresses]
+ADD CONSTRAINT [PK_MailingAddressID]
+    PRIMARY KEY CLUSTERED ([MailingAddressID] ASC);
+
+--This is the new Email Addresses Table, put in for normalization
+CREATE TABLE [dbo].[Email]
+ALTER TABLE [dbo].[Email]
+ADD CONSTRAINT [PK_EmailID]
+    PRIMARY KEY CLUSTERED ([EmailID] ASC);
+
+
+	

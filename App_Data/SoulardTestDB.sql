@@ -59,6 +59,10 @@ CREATE TABLE [dbo].[Children] (
 );
 
 GO
+
+--On review, the below table may need changing. For normalization, the addresses may need
+-- to be split off from the contact info so that families can share addresses and phone numbers
+-- with out duplicating multiple times for 8 person households -- 02.01.2015
 --The below table was optimized (12.10.2014)
 -- Creating table 'ContactInfo'
 CREATE TABLE [dbo].[ContactInfo] (
