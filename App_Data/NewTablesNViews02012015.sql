@@ -126,7 +126,7 @@ CREATE TABLE [dbo].[MethodsOfContact]
 ALTER TABLE [dbo].[MethodsOfContact]
 ADD CONSTRAINT [PK_MethodID]
     PRIMARY KEY CLUSTERED ([MethodID] ASC);
---these values will be used from a listbox, hence their high level of description
+--these values will be used from a listbox, hence their high level of description.02.02.2015
 INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('on their cell phone');
 INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('on their home phone');
 INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('on their work phone');
@@ -135,8 +135,12 @@ INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('by mail to their job')
 INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('in person, at their home');
 INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('in person, at their job');
 INSERT INTO [MethodsOfContact] (MethodOfContact) Values ('in person, neutral location');
-
---Create View Here 02.01.2015
+GO
+--02.03.2015. View created for the drop down list.
+CREATE VIEW [MethodOfContactValuesView] AS
+SELECT MethodOfContact
+FROM MethodsOfContact
+WHERE MethodOfContact IS NOT NULL
 GO
 	
 --Create a table to choose values from dropdown list of male and female. Added 02.01.2015
@@ -152,8 +156,14 @@ ADD CONSTRAINT [PK_GenderID]
 
 INSERT INTO [Genders] (Gender) Values ('Female');
 INSERT INTO [Genders] (Gender) Values ('Male');
---Create View Here 02.01.2015
 GO	
+
+--02.03.2015. View created for the drop down list.
+CREATE VIEW [GenderValuesView] AS
+SELECT Gender
+FROM Genders
+GO
+
 --This is the new Addresses Table, put in for normalization. 02.01.2015
 CREATE TABLE [dbo].[Addresses] (
 	[AddressID] int IDENTITY (1,1) NOT NULL,
@@ -181,8 +191,13 @@ ALTER TABLE [dbo].[MailingAddresses]
 ADD CONSTRAINT [PK_MailingAddressID]
     PRIMARY KEY CLUSTERED ([MailingAddressID] ASC);
 
---This is the new Email Addresses Table, put in for normalization
-CREATE TABLE [dbo].[Email]
+--This is the new Email Addresses Table, put in for normalization. 02.03.2015
+CREATE TABLE [dbo].[Email] (
+	[EmailID] int IDENTITY (1,1) NOT NULL,
+	[Email] nvarchar(90),
+	[EmailType] nvarchar(12)
+	);
+
 ALTER TABLE [dbo].[Email]
 ADD CONSTRAINT [PK_EmailID]
     PRIMARY KEY CLUSTERED ([EmailID] ASC);

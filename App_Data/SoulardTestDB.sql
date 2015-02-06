@@ -24,7 +24,10 @@ CREATE TABLE [dbo].[NurseryClients] (
     [ChildID] int  NOT NULL,
     [MaleParentAdultId] int,
     [FemaleParentAdultId] int  NOT NULL,
-    [ChildCallID] int  
+    [ChildCallID] int,
+	--The below fields were added 02.06.2015 for tracking
+	[DateModifiedLast] DateTime2 NOT NULL,
+	[ModifiedBy] int  
 );
 GO
 --The below table was optimized (12.10.2014)
