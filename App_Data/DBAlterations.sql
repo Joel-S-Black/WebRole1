@@ -17,4 +17,9 @@ ALTER TABLE	[dbo].[NurseryClients]
 ALTER TABLE	[dbo].[Adults] 
   ADD [DateModifiedLast] DateTime2 NOT NULL;
 
+--Add an IsActive field to Memberships table. 02.09.2015
+ALTER TABLE [dbo].[Memberships]
+  ADD [IsActive] bit;
+
+
 

@@ -108,7 +108,7 @@ CREATE TABLE [dbo].[ContactPreference] (
 );
 GO
 --The below table was optimized (12.10.2014)
--- Creating table 'Membership'
+-- Creating table 'Memberships'
 --The all members are adults, but not adults or children are members.
 CREATE TABLE [dbo].[Memberships] (
     [MemberId] int IDENTITY(1,1) NOT NULL,
@@ -122,7 +122,9 @@ CREATE TABLE [dbo].[Memberships] (
     [DateJoined] nvarchar(15),
     [MethodOfEntry] nvarchar(21) DEFAULT "Christian Experience", --"Christian Experience" is the most common method for our members
     [TransferedFrom] nvarchar(max),
-    [CopyOfLetter] nvarchar(max)
+    [CopyOfLetter] nvarchar(max),
+--Add an IsActive field to Memberships table. 02.09.2015
+    [IsActive] bit
 );
 GO
 --The below table was optimized (12.11.2014)
